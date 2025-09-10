@@ -84,18 +84,21 @@
 \begin{singlespace}
 
 \begin{titlepage}
-\title{Role of EdTech on numeracy and literacy for children with functional difficulties: Experimental evidence from Kenya}
+\title{Do Bureaucrats Support Policies While Undermining Implementation? Evidence from Teachers’ Response to an Education Reform in Tanzania}
+%\title{Do Policies Shift Bureaucrat Beliefs? Evidence from Education Reforms and a Teacher Experiment}
 
-\author{Frank Odhiambo \thanks{Development Economics Group, ETH Zurich, Switzerland. E-mail: \href{mailto:frankotieno.odhiambo@nadel.ethz.ch}{fodhiambo@ethz.ch}.} \and Isabel G\"unther \thanks{Development Economics Group, ETH Zurich, Switzerland. E-mail: \href{mailto:isabel.guenther@nadel.ethz.ch}{isabel.guenther@nadel.ethz.ch}.}}
+\author{Frank Odhiambo \thanks{Development Economics, University of G\"ottingen, Germany. E-mail: \href{mailto:frank.odhiambo@wiwi.uni-goettingen.de}{frank.odhiambo@wiwi.uni-goettingen.de}.}}
 
 \date{\today}
 \maketitle
 \begin{abstract}
 \begin{singlespace}
-Children with functional difficulties—most of whom live in low- and middle-income countries—consistently demonstrate lower literacy and numeracy skills, primarily due to irregular school attendance, disability-related instructional challenges, and broader structural barriers. Yet, despite these persistent learning gaps, few studies have examined the impact of assistive technologies—beyond wearable devices—on their educational outcomes. In this study, we conduct a field experiment to assess the effect of an educational technology intervention on the numeracy and literacy skills of children with functional difficulties in a low-income setting with a high prevalence of disability. Participants are recruited through a government-led school screening program. Those assigned to the intervention group are then provided with a mobile device pre-installed with a computer-assisted learning application designed to support self-regulated study. Eight months post-intervention, we find positive effects on both numeracy and literacy. Aggregate literacy and numeracy skills increases by 0.15 and 0.13 standard deviations (SD) respectively, exceeding 50th and 70th percentile of SD effects reported in other studies exploring lirecat and numeracy increases respectively. Both male and female children with functional difficulties benefit from the intervention, and the treatment effects are primarily driven by usage, rather than by changes in study effort, time allocation, perceptions about schooling, interactions with teachers and peers or in mental well-being. Our findings suggest that EdTech intervention may be effective in improving learning outcomes for children with functional difficulties. \\
+This paper investigates bureaucrats’ responses to top-down policy reforms, drawing on evidence from Tanzania’s nationwide free primary education (FPE) reform. Using a difference-in-differences design, I find that the reform increases teacher support for FPE by 18 percentage points. Yet this support coincides with an adverse behavioral response: rent-seeking. Over half of eligible parents report paying a bribe to secure school placement for their child, and public perceptions of teacher corruption rise by 32 percentage points. These results suggest that bureaucrats can simultaneously endorse a policy in principle while undermining its implementation in practice, challenging the conventional assumption that stated support guarantees fidelity. The findings highlight the need to consider bureaucratic incentives beyond attitudinal alignment when designing large-scale reforms. More broadly, the study contributes to understanding the interplay between bureaucrat attitudes and their behavioral responses to policy reforms, particularly in developing-country contexts.\\
 \end{singlespace}
 
-\textbf{Keywords:} EdTech, literacy, numeracy, disability \\
+\textbf{Keywords:} Policy implementation, bureaucratic behavior, education reform, corruption, Tanzania \\
+
+JEL Classification: H11, I21, D73, O15
 
 \bigskip
 \end{abstract}
@@ -106,766 +109,90 @@ Children with functional difficulties—most of whom live in low- and middle-inc
 
 \onehalfspacing
 
-\section{Introduction} \label{sec:introduction} %%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%
-Educational efforts have increasingly shifted toward improving learning outcomes (\cite{glewwe_schools_2017}). Despite widespread school attendance (\cite{world_bank_world_2018, glewwe_chapter_2006}), substantial learning gaps persist across regions, with many children demonstrating numeracy and literacy skills far below their expected grade level (\cite{world_bank_world_2018}). One demographic that is particularly disadvantaged is those with functional difficulties–or disabilities–which \textcite{unicef_seen_2021} estimates to be about 240 million children worldwide.\footnote{We use the UNICEF and Washington Group definition that specifies disability into various functional difficulty categories such as as vision, hearing, mobility, self-care, communication, learning, remembering and concentrating. Other domains are accepting change, controlling behaviour, making friends, having anxiety and experiencing depression (\cite{unicef_seen_2021}).} \textcite{zhang_numeracy_2023}, for example, find that those with physical and intellectual difficulties have significantly lower numeracy skills. 
+\section{Introduction}
+\hspace{1em} The implementation success of many reforms often depends on the actions of frontline bureaucrats who translate policy directives into practice. While policymakers design reforms with specific objectives, the ultimate success of these interventions depend on whether implementing agents adopt behaviors consistent with policy goals. This paper examines this implementation challenge in the context of a nationwide reform that eliminated primary school fees in Tanzania. I examine how teachers as the key bureaucratic actors in schools responded to the reform, both in stated support and behaviorally.
 
-For these children, there are several reasons why their numeracy and literacy levels might be even more severely impacted. First, due to their functional difficulties, they are much less likely to attend school regularly (\cite{zhang_numeracy_2023}). Access to school may be a barrier if a child with mobility difficulties has to travel long distances to school (\cite{trani_delivering_2012}), or if they do not have access to assistive devices such as wheelchairs (\cite{lamichhane_disability_2013}), both problems which are particularly pertinent in developing countries. Moreover, more often than not, children with functional difficulties are enrolled in mainstream schools rather than specialized institutions, largely due to the limited availability of the latter (\cite{mckinney_life_2016}). These mainstream schools are typically less equipped with teachers with specialized training that addresses the unique needs of students with functional difficulties. For instance, children with hearing impairments often require instructional adaptations, such as slower speech and unobstructed visibility of the speaker’s face, to facilitate effective lip reading (\cite{lockwood_hearing_2006}). With conventional education environments failing to accommodate the diverse learning requirements of students with functional difficulties (\cite{yuwono_classroom_2021}), such systemic shortcomings may have significant implications for the academic and developmental outcomes of these children with functional difficulties, particularly when they require tailored support to successfully integrate. 
+I build on standard principal-agent models where policymakers (principals) design reforms that must be implemented by bureaucrats (agents) operating under different constraints and incentives. Policymakers, such as legislators and senior government officials, prioritize broad policy objectives, whereas bureaucrats operate under local constraints and hold discretion over day-to-day implementation. In education, teachers and school administrators embody the agent role, exercising influence that can either advance or undermine policy goals depending on how their beliefs and incentives align with those of the principal.
 
-How can learning outcomes for children with functional difficulties be improved? The majority of the existing literature on interventions and policies aimed at enhancing learning outcomes for disabled students in low-income settings emphasizes environmental factors, such as improving physical access and providing technical support (\cite{hanafin_including_2007}). Yet, few studies that evaluate the impact of educational technology (EdTech) on the educational attainment of children with functional difficulties, particularly in low-income settings. In this paper, we investigate the role of educational technology in improving learning outcomes for these children–a question that has not yet been empirically studied. 
+Existing research establishes that bureaucrat beliefs significantly influence implementation outcomes. For example, in educational settings, teachers' attitudes and expectations affect student achievement and educational choices (\cite{sabarwal_teacher_2022,fives_teachers_2016,liou_climate_2021}) with particularly strong evidence on how gender stereotypes shape course selection and long-term human capital formation (\cite{lavy_gender_2008,lavy_origins_2018}). More broadly, studies from various institutional contexts demonstrate that pre-existing norms and enforcement capacity determine compliance behavior. For instance, \textcite{fisman_corruption_2007} show how cultural norms affected diplomatic parking violations and \textcite{olken_monitoring_2007} documents how monitoring intensity reduces corruption in Indonesian infrastructure projects. These studies suggest that attitudes are important for implementation fidelity, but that incentives and constraints may also determine whether attitudes translate into compliant behavior.
 
-Education technology holds particular promise for several reasons. First, digitally delivered learning materials allow students to progress at their own pace, making education accessible even for those with irregular school attendance. This flexibility is vital in addressing constraints on school access, as technology can enable learning regardless of physical barriers. In high-income contexts, digital devices are increasingly used to support specialized learning needs but scale-up is low given that a higher teacher-to-student ratio in specialized schools already supports special learning needs (\cite{bastawrous_mobile_2013}). In low-income settings, take-up is still low, in large part due to lower electricity coverage, limited and unreliable internet connectivity but also due to poor digital literacy skills among users in these settings (\cite{rodriguez-segura_edtech_2022}).
+More recently, economists have examined how policy actors update beliefs in response to new information. \textcite{vivalt_how_2023} show that policymakers and bureaucrats hold systematically different priors and that new evidence can shift those priors, with heterogeneous responsiveness. In related work from Brazil, \textcite{hjort_how_2021} demonstrate that mayors revise beliefs about early childhood programs when presented with credible evidence, although the pattern of updating differs from \textcite{vivalt_how_2023}. This literature establishes that beliefs are malleable and policy-relevant. Less is known, however, about whether and how a concrete top-down reform shifts implementers’ beliefs and their on-the-ground behaviors, and whether those two margins move in tandem or come apart.
 
-Second, recent studies highlights the effectiveness of "teaching at the right level" (\cite{banergee_mainstreaming_2016}), an approach that tailors instruction to students’ actual abilities rather than adhering to a uniform curriculum. This strategy is particularly relevant in low-income settings, where classrooms often include students with vastly different learning levels. For children with functional difficulties, the challenge of differentiated instruction is even greater, as their needs often fall outside the scope of traditional teaching methods. EdTech, by offering personalized and adaptive learning pathways, may be uniquely suited to address these gaps, potentially improving their learning outcomes especially in low-income settings.  
+This paper makes two contributions. First, it provides among the first causal estimates of how bureaucrats’ (teachers’) policy attitudes adjust in response to an actual reform, rather than to an experimental information treatment. Second, it examines the extent to which changes in stated attitudes translate into implementation behavior, thereby speaking to the relationship between expressed support and revealed actions in the policymaking process. My setting, teacher response to free primary education policy in a low-income creates a context where rents are plausibly at stake through placement into fee-free public schools, thus offering a credible test of whether bureaucrats’ stated endorsement can serve as a credible proxy for implementation fidelity.
 
-For children without functional difficulties, the evidence on the impact of EdTech regarding literacy and numeracy outcomes is mixed, but largely promising. While some studies highlight significant benefits, others indicate limited or no impact. For instance, \textcite{rodriguez-segura_edtech_2022} finds that technology-based interventions focused on self-regulated study have the greatest potential for improving learning outcomes. In Botswana, \textcite{angrist_experimental_2022} find that SMS and phone calls are cost-effective solutions for improving learning outcomes while in El Salvador, \textcite{buchel_relative_2022} find that classes with computer-assisted learning have higher numeracy gains than those with additional teacher-led instruction. \textcite{agrawal_personalized_2022} suggest adding personalized content recommendations to increase EdTech usage, with the greatest learning benefits accruing for more frequent users with more personalized content interactions. Conversely, \textcite{piper_does_2016} find that EdTech fails to yield measurable gains. They also suggest the need for context-specific interventions, particularly in low-resource settings where factors like access to devices, teacher capacity, and digital literacy may significantly influence the effectiveness of EdTech interventions. Overall, \textcite{escueta_upgrading_2020} conclude that while providing access to technology by itself may not generate large learning gains, computer-assisted-learning (CAL) programs and technology-enabled behavioral interventions demonstrate the largest potential.
+Empirically, I assemble nationally representative survey data spanning periods before and after the FPE reform and combine them with measures of teachers’ policy attitudes and multiple indicators of behavior relevant to implementation. To identify reform effects, I employ a difference-in-differences design that exploits temporal variation around the policy coupled with cross-sectional comparisons to appropriate counterfactual groups. For attitudes, I compare changes for teachers relative to other groups not directly charged with school-level implementation. For behavior, I study household interaction with schools, specifically, whether eligible parents report paying a bribe to secure a child’s place. I also benchmark teacher's perception-based corruption measures against other occupational groups. 
 
-For those with functional difficulties, specific studies have investigated the impact of assistive devices on their educational attainment and learning outcomes. For example, a study in rural China finds that for children with low vision, wearing eyeglasses significantly increases test scores by 0.16 to 0.22 standard deviations (SD), the equivalent of about 0.3 to 0.5 additional years of schooling, with the largest benefits particularly for under-performing students (\cite{glewwe_better_2016}). However, they also note gender disparities, with girls being less likely to wear glasses, and thus less likely to benefit from such interventions. Further, \textcite{ma_effect_2014} find that providing free eyeglasses has a greater impact on academic performance (0.11 SD) of children with low vision than parental education (0.03 SD) or family wealth (0.01 SD). \textcite{wang_cluster-randomized_2017} examine the effects of providing free eyeglasses on subsequent purchases of glasses by individuals with visual impairments while \textcite{grimm_unblurring_2018} analyze willingness to pay for eyeglasses in Burkina Faso.
+My main results highlight a disconnect between teachers’ stated support for FPE and their behavioural response. Teachers’ support for FPE rises by 18 percentage points following the reform. Yet, this postive attitudinal shift coincides with increased rent-seeking behavior: over half of eligible parents report paying a bribe for school placement and public reports of teacher corruption increase by 32 percentage points. This pattern suggests a "stated preference-revealed preference" divergence such as those discussed by \textcite{beshears_how_2008}. In this setting, implementers endorse reform objectives while simultaneously engaging in behaviors that undermine equitable access.
 
-Beyond vision-related interventions, in Sub-Saharan Africa, \textcite{odhiambo_does_2023} examine the impact of disability legislation on school enrollment among children with functional difficulties, finding that such policies increase school enrollment by 0.05 to 0.21 percentage points and extend years of schooling by 0.1 to 0.46 additional years. In the United Kingdom, \textcite{harris_reading_2011} explore the comparative effects of hearing aids and cochlear implants on the reading and spelling abilities of deaf adolescents. While both groups lag behind chronological age-level benchmarks, students using hearing aids perform better than those with cochlear implants, highlighting the potential of assistive devices to mitigate educational challenges faced by children with functional difficulties. 
+The evidence points to a demand-side mechanism: the reform generated a surge in enrollment demand that, combined with capacity constraints, increased teachers' discretionary power over scarce school slots. This enhanced gatekeeping authority created opportunities for rent extraction despite teachers' stated support for the policy's egalitarian goals.
 
-In our paper, we study the effect of self-regulated computer-assisted learning (CAL) on the numeracy and literacy of children with visual, auditory, physical, learning, social and behavior difficulties in a largely rural setting in Kenya, with a high disability prevalence. Specifically, we recruit 624 children with functional difficulties in Grades 3, 4 and 5 across 63 primary schools in Homa Bay County. After randomly assigning treatment status at school level, we offer the treated sample a tablet device with a learning software installed on it. Eight months post-intervention, we measure treatment effects on our numeracy and literacy outcomes, based on a standardized test administered to the students. 
+These findings have important implications for reform design and implementation. Stated bureaucratic support, while potentially necessary, is insufficient for ensuring implementation fidelity. Policymakers must anticipate how large-scale interventions reshape local incentives and alter the distribution of discretionary authority, particularly in weak monitoring environments. Reforms intended to expand access may inadvertently create barriers for intended beneficiaries if implementation challenges are not adequately addressed.
 
-We find that the EdTech intervention increases literacy among children with functional difficulties by 0.153 standard deviations (SDs). These effect sizes exceed the median effect sizes reported in other literacy-related intervention evaluations. We also find that the intervention increases numeracy by 0.13 SDs, exceeding the 70th percentile of impact sizes reported in other evaluations of numeracy-related interventions. Our disaggregated literacy and numeracy analysis shows some heterogeneity in treatment effects. We observe significant treatment effects in lower level literacy skills such as reading a simple phrase and comprehension related to the simple phrase, but no effects on reading a longer-more complex phrase, or its corresponding comprehension questions. Conversely, on numeracy, we do not observe any effects on basic number identification or comprehension questions, but observe significant effects on relatively more complex Math operations such as addition, multiplication and division tasks.
+The remainder of the paper proceeds as follows. Section 2 describes the Tanzanian education context and FPE reform. Section 3 presents the data and empirical methodology. Section 4 reports results on attitude and behavior changes, including robustness checks and heterogeneity analysis. Section 5 discusses mechanisms and policy implications. Section 6 concludes.
 
-These treatment effects are primarily explained by usage of the intervention rather than changes in study time, perceptions of schooling, or interactions with teachers and peers. Students who study material that is more closely aligned with their current numeracy and literacy skills report significantly higher literacy scores. Furthermore, we find no evidence that changes in mental health or well-being explain the observed treatment effects. Both male and female students benefit from the intervention, even though treated females have significantly smaller gains in both higher-order literacy and higher-order numeracy skills compared to their male counterparts. Furthermore, children with physical and behavior FDs also seem to benefit the most from the intervention while those with learning and auditory difficulties benefit the least. 
+\section{Tanzania's universal education reform}
+TBD
 
-The rest of the paper is set up as follows. In Section \ref{sec:design}, we discuss study design, setting, sampling criteria, and empirical strategy, while in Section \ref{sec:results}, we discuss our results. Finally, in Section \ref{sec:conclusions}, we draw some conclusions and recommendations.
-
-
-\section{Research design, sampling and empirical approach}\label{sec:design}
-
-\subsection{Intervention}\label{subsec:intervention}
-
-The intervention that was administered in this study is a self-study mobile application (mobile app) installed on a low-cost tablet device. Children with functional difficulties in the treatment group were offered an 8-inch android-based tablet (Figure \ref{fig:intervention_tablet}) and a solar panel (Figure \ref{fig:intervention_panel}) costing USD 85 (KES 11,000) and USD 16 (KES 2,100) respectively, both sourced locally. The tablets were pre-installed with ANTON (henceforth 'the app'), a self-regulated educational technology (EdTech) mobile app offering curriculum content in various subjects, including Mathematics, English, Science, and Music. The app also provides resources in Geography, Physics, Biology, and several additional languages such as German, French, Italian, Portuguese, and Spanish. On the app, children can switch between subjects and grade levels as they wish. The app is freely available for download and use. We show examples of some of the content available in the app in the Appendix \ref{fig:intervention_anton}.
-
-The app features a unique token-based gaming system designed to incentivize learning. Users earn coins for successfully completing educational activities, which they can then use to play various in-app games. This gamification element enhances engagement and encourages sustained participation. We procured a subscription package from ANTON that allows users—after an initial download—to access learning materials without an internet connection.
-
-The app is not specifically designed for the Kenyan curriculum but is widely used globally. Nevertheless, it includes content that aligns with key topics covered in Kenyan primary schools, and several urban schools in Kenya already use it as a supplementary learning tool. Our primary focus was on foundational literacy and numeracy skills—such as reading, comprehension, addition, multiplication, and division—which are fundamental across curricula, including Kenya’s. Importantly, during our pilot, we tested both ANTON and Zeraki Companion app–a locally developed app tailored to the Kenyan curriculum. Students overwhelmingly preferred ANTON, reporting greater ease of use compared to Zeraki Companion. This preference informed our decision to use the ANTON app for the study.
-
-Before distributing the tablets to the participants, they were pre-set to ensure only the necessary applications and functionalities were active. This involved uninstalling any non-essential software, deactivating the Play Store, and removing potentially distracting apps such as YouTube, Maps, and WhatsApp. We retained essential operational features such as network connectivity, SIM slot functionality, messaging, and calling capabilities.
-
-The tablets were issued to the children immediately after administering the baseline survey questionnaire. Tablets were distributed at the child's residential place and in the presence of a caregiver, who had to consent to the child receiving the device. Before issuing the tablets, the research team conducted brief demonstration sessions, lasting about ten minutes each, for the children and their parents or caregivers. These sessions provided instructions on using the tablet and the app, including how to switch subjects or levels and access the games. Both the caregiver and the child were informed that the tablet was intended to supplement, not replace, teacher efforts in school and that it was recommended for home rather than school use. Although the research team communicated this recommendation, there were no mechanisms to enforce it, leaving the possibility that some children might use the tablets in school.
-
-Three months after the tablets were issued, even though most households reported having access to solar electricity, several participants indicated that the tablets were rapidly depleting their existing solar panel resources which significantly limited their access to lighting at night. For this reason, several households were no longer charging the tablets at home or even at all. In response to this issue, we issued low-cost solar panels specifically designed to handle the power requirements of the tablets to ensure that households could continue using the tablets without compromising their essential lighting or other energy needs. 
+\section{Methods and Data}
 
 
-\subsection{Design and study setting}\label{subsec:design}
-To evaluate the role of our intervention on learning outcomes, we implemented a cluster-randomized experiment with randomization at the school level. Sampled schools were randomized to a treatment or control group, with the treatment sample receiving the intervention, and the control group receiving neither.\footnote{See Section \ref{subsec:intervention} for more details on the intervention and Section \ref{subsec:design} for more details on the sample selection process.} Randomization was carried out at school level to minimize the likelihood of spillovers. 
+\subsection{Data}
+I use nationally representative survey data from the Afrobarometer project for Tanzania. Specifically, I draw on Rounds 1--3 of the survey, which were implemented in 2001, 2003, and 2005, respectively. The Afrobarometer is a repeated cross-sectional survey designed to capture citizen attitudes, experiences, and evaluations of democracy, governance, and service delivery across African countries. In Tanzania, the sampling strategy follows a stratified, clustered, and nationally representative design, allowing inference at the population level.  
 
-\begin{figure}[h!]
-\caption{Research Design and timeline}\label{fig_design}
-\centering
-\scalebox{0.7}{
-\begin{tikzpicture}[node distance = 2cm]
-\node (start) [startstop] {Population of public primary schools in Homa Bay County (881 schools)};
-\node (sample) [process, below of=start] {Randomly selected 65 schools};
-\node (sample_n) [notes, right of=sample, xshift=5.5cm] {Apr 2023};
-\node (screening) [decision, below of=sample, yshift=-1.5cm] {Grades 3,4,5 screened for FD};
-\node (screening_n) [notes, right of=screening, xshift=5.5cm] {May-Jun 2023};
-\node (not_screened) [process, left of=screening, xshift=-3cm] {2 primary schools};
-\node (sample_f) [process, below of=screening, yshift=-1.5cm] {63 primary schools (N=624)};
-\node (control) [process, below of=sample_f, xshift=-3cm] {\textbf{Control group} (33 schools, n=306)};
-\node (treated) [process, left of=control, xshift=8cm] {\textbf{Treatment group} (30 schools, n=318)};
-\node (baseline_t) [process, below of=treated] {Baseline survey + Tablet distribution};
-\node (baseline_n) [notes, right of=baseline_t, xshift=2.5cm] {Jun-Jul 2023};
-\node (baseline_c) [process, below of=control] {Baseline survey};
-\node (panel) [process, below of=baseline_t] {Solar panel distribution};
-\node (panel_n) [notes, right of=panel, xshift=2.5cm] {Nov 2023};
-\node (endline_t) [process, below of=panel] {Endline survey};
-\node (endline_n) [notes, right of=endline_t, xshift=2.5cm] {Feb-Apr 2024};
-\node (endline_c) [process, left of=endline_t, xshift=-4cm] {Endline survey + Tablet and solar panel distribution};
-\draw [arrow] (start) -- (sample);
-\draw [arrow] (sample) -- (screening);
-\draw [arrow] (control) -- (baseline_c);
-\draw [arrow] (treated) -- (baseline_t);
-\draw [arrow] (baseline_t) -- (panel);
-\draw [arrow] (panel) -- (endline_t);
-\draw [arrow] (baseline_c) -- (endline_c);
-\draw [arrow] (sample_f) -- (control);
-\draw [arrow] (sample_f) -- (treated);
-\draw [arrow] (screening) -- node[anchor=west] {Yes} (sample_f);
-\draw [arrow] (screening) -- node[anchor=south] {No} (not_screened);
-\end{tikzpicture}
-}
-\vspace{2mm}
-\
+The period covered by these data is particularly well suited to study the effects of Tanzania's free primary education (FPE) reform on teacher beliefs and behaviors. While the policy was announced in 2001, it was officially implemented in 2002. This means that Round 1 provides a baseline measure of beliefs and behaviors just prior to implementation, while Rounds 2 and 3 capture responses in the immediate aftermath of the reform. 
 
-\begin{minipage}{0.8\linewidth}
-\footnotesize{\justify\textbf{Notes}: Figure shows the timeline of the experiment. Number of public schools in the county is based on the Kenya Basic Education Statistical Booklet (\cite{government_of_kenya_basic_2019}). Two of the 65 sampled schools could not be reached for FD screening due to logistical and disease outbreak reasons and were therefore dropped from the study. Four months after the intervention, we distributed solar panels to address a tablet charging due to electricity access challenges. Details of the intervention are discussed in Section \ref{subsec:intervention}.}
-\end{minipage}
-\end{figure}
+\subsection{Empirical strategy}
+To identify the effects of FPE reforms on both teachers’ beliefs and eventual behavioral responses, I estimate difference-in-differences (DiD) models. The first specification examines whether teachers update their support of the policy, while the second investigates whether teachers engage in rent-seeking behavior following the reform, thus undermining the policy reform itself.  
 
-We implemented our study in Homa Bay County, a largely rural setting, in Western Kenya. In 2019, the over-5 disability prevalence in Homa Bay County was twice the national average (4.3\% vs 2.2\%- \textcite{kenya_national_bureau_of_statistics_2019_2020}), making it an ideal location to carry out our experiment. In 2019, the county had 1,042 primary schools. Of these, 85\% were public schools (881), hosting about 90\% of all children enrolled in primary school in the county (\cite{government_of_kenya_basic_2019}). For this reason, in our experiment, we focused only on children attending the 881 public primary schools. 
+\subsubsection{Support for the policy}
+To estimate whether teachers updated their support for the policy reform following its implementation, I estimate following model:  
+\vspace{-1em}
 
-The study was registered with the American Economic Association’s (AEA) registry (\cite{odhiambo_does_2023}). Ethical approval was obtained from the ETH Zurich Ethics Committee and the Strathmore University Institutional Scientific and Ethical Review Committee in Kenya. Furthermore, the research activities in Kenya were authorized by the National Commission for Science, Technology, and Innovation (NACOSTI), ensuring adherence to local regulatory and ethical guidelines.\footnote{Study approved at ETH under approval number EK 2023-N-11 and locally in Kenya as SU-ISERC1564/23. It was renewed as SU-ISERC1975/24. Research activities approved under license number NACOSTI/P/23/24649}
-
-\subsection{Sampling}\label{subsec:sampling}
-We recruited school-going or recently dropped-out children who were positively screened for functional difficulties and who were in their 3rd, 4th or 5th grade. First, we randomly selected sixty-five (65) out of 881 public schools in the county. Using data from a pilot exercise conducted in 10 schools in February 2023, we found an average of 2.7 children with functional difficulties per grade in Grades 3 to 5. This estimate informed our calculation of the number of schools required to achieve the desired study sample size. Two out of the sixty-five schools could not be reached and were consequently excluded from the study. One of the schools was located in an area that at the time had a cholera outbreak, thus posing health risks to our team of enumerators. The other was located in an area that had significant travel and logistical difficulties. 
-
-Next, we used the support of a government agency responsible for disability screening in schools, the County Disability Assessment Office (CDAO) to identify our sample within these schools, following the department's normal disability screening procedure. Within each sampled school, CDAO officers scheduled a disability screening date and notified its head. Before this screening date, the CDAO officers asked the teachers of Grades 3, 4, and 5 to pre-identify children in their classes whom they suspected of having any form of disability or functional difficulty. The teachers would then invite these children and their parents or caregivers for a disability screening exercise at their respective schools on the communicated date for further evaluation by the screening officers. On the day of the disability screening, the CDAO officers received the list of the pre-identified children from the teachers and then conducted a one-on-one meeting with each one, in the presence of their parent or caregiver. For each child, the CDAO first discussed with the parent or caregiver, to understand the underlying reason for the child being pre-identified for screening. They then used a set of government approved screening forms and equipment to verify whether the child had a functional difficulty. Following this assessment, the CDAO officers either confirmed the child as having a functional difficulty referred them for more specialist assessment or ruled out the existence of one. Children were typically referred for more specialist assessment if the CDAO did not have the requisite equipment on-site or if they recommended medical intervention.
-
-At the screening, the CDAOs notified the attending parents or caregivers about our study and sought consent to have them share the screening data with us for research purposes. The CDAO shared with the research team the screening data for all consenting caregivers.\footnote{Demand for FD screening was high in the sampled schools. Even though the CDAO officers communicated to the school that the screening would target only children in Grades 3, 4 and 5, children from across all Grades in the sampled primary school attended (See Table \ref{tab:assessment-table} in Appendix). Nevertheless, most of the children who attended the screening were from our target Grades.} Most of the children who were screened by the CDAOs were confirmed to have a FD (88\%) while another 8\% were referred for more specialized assessment. Only 4\% of those who attended the screening were not confirmed to have a FD. Separately, about 70\% of those screened were within our target Grades. Only children with FD or referred for more specialist screening in Grades 3,4 and 5 were selected for the study (Table \ref{tab:assessment-table}). 
-
-After the FD screening was completed, we randomly assigned each of the 63 screened schools to one of two groups: a treatment group, in which study participants received the intervention, and a control group, in which participants did not. A total of 30 schools were assigned to the treatment group with the remaining 33 being assigned control group (See Figure \ref{fig_design}). 
-
-Our overall attrition rate at endline is 3\% for the child survey and 5\% for the parent survey. While attrition is slightly higher in the control sample (5\% and 6\% respectively) compared to the treatment sample (3\% and 5\% respectively), this difference is not statistically significant (Table \ref{tab:attrition}).
-
-
-\subsection{Data and variables}\label{sec:data}
-We combined assessment data from the CDAO and field survey data for our experiment, collecting baseline and endline surveys. For both the baseline and endline surveys, we administered a caregiver survey and a child survey. In the caregiver survey, we collected demographic and household information, including household size, wealth indicators, technology adoption, and the education levels of parents and siblings. We also collected information on the study child’s education, well-being, school participation, and any functional difficulties. At endline, caregivers were asked additional questions about their usage of the tablets. In the child survey, we captured details on school attendance, mental health, and well-being and administered a similar tablet usage module for the treated sample survey, similar to the one administered to the parent, to compare usage reports between the child and the parent. 
-
-In both our baseline and endline data, we also observed individual measures of numeracy and literacy, which we used to construct literacy and numeracy indices.
-
-For literacy, we assess skills through tasks such as reading a simple 14-word phrase, answering two comprehension questions related to it, reading a longer 72-word passage, and answering five comprehension questions about the passage (see Appendix \ref{appendix:literacy_tests}). The simple phrase task is recorded as a binary variable indicating whether the entire phrase was read correctly, while the longer passage task is scored based on the number of words read correctly. All comprehension responses, for both the short and long texts, are recorded as binary indicators. We use these variables to construct a literacy index by first normalizing the 72-word count into a z-score, summing the binary comprehension measures, and then combining this sum with the normalized word count. 
-
-For numeracy, we assess number identification, number comparison, addition, sequencing, multiplication, and division. Each sub-category consists of three to four individual questions (see Appendix \ref{appendix:numeracy_tests}), with binary responses coded as 1 for a correct answer. We compute a total score for each sub-category, standardize these totals into z-scores, and then sum the z-scores to construct a numeracy index, ensuring equal weighting across sub-categories. 
-
-For both the numeracy and literacy indices, we standardized baseline and endline scores into z-scores using the distribution of endline scores in the control group so that the control group has a mean of 0 and a standard deviation of 1 at endline for each index. 
-
-We also use the Poverty Probability Index (PPI) in our analysis, as specified by \textcite{kshirsagar_household_2017}, as a proxy for household wealth status. The PPI is a country-specific index designed to distinguish between poor and non-poor households based on a set of up to ten simple, predictive questions. These questions estimate the likelihood (expressed as a percentile) that a household falls below a given poverty threshold.\footnote{Q1. What is the highest educational level that the FEMALE household head/spouse COMPLETED? Q2. What is the highest educational level that ANY member of the household COMPLETED? Q3. What is the predominant wall material of the main dwelling unit? Q4. What is the predominant floor material of the main dwelling unit? Q5. Over the past 7 days, did the household either purchase/consume/acquire any bread? Q6. Over the past 7 days, did the household either purchase/consume/acquire any meat or fish? Q7. Over the past 7 days, did the household either purchase/consume/acquire any ripe bananas? Q8. Does your household own any towels? Q9. Does your household own any thermos flasks?} Unlike traditional wealth or income measures, which are often prone to non-response (\cite{riphahn_item_2005}), the PPI questions are straightforward and less sensitive. Furthermore, while standard wealth indices typically provide relative wealth rankings within-sample, the PPI offers a framework that allows out-of-sample comparisons, enabling us to assess household wealth relative to the national population rather than just within the study sample. In both our baseline and endline datasets, we collect the Kenya-specific PPI questions and use them to estimate the wealth proxy, with the final household PPI scores calculated following the methodology outlined in \textcite{kshirsagar_household_2017}.
-
-A final index we construct for our analysis is the mental health and well-being scale. We use the Stirling Children’s Well-being Scale (SCWBS), a 15-item Likert scale developed by psychologists to measure child well-being across three main domains: positive emotional state, positive outlook, and social desirability. We adopt this scale because it has been validated for school-aged children and is specifically designed to detect changes in well-being post-intervention (\cite{liddle_emotional_2015}). In our study, we administer all 15 Likert-scale questions and aggregate responses into the three sub-domain scales, as well as an overall well-being index, following the methodology outlined by \textcite{liddle_emotional_2015}.
-
-\subsubsection{Literacy and numeracy tests for siblings}\label{subsec:sibling_selection}
-Besides our sampled children, we also administered the numeracy and literacy tests to a sibling, applying a specific inclusion criteria for the sibling to test. We adminsitered the test to a sibling of the sampled child only if they were between 5–17 years old and had no more than a primary school level of education. If multiple siblings met these criteria, we prioritized interviewing the younger sibling, ideally one younger than the study child. However, if the younger sibling was unavailable at the time of the interview, we selected the older sibling who still met our overall criteria. 
-
-\subsection{Empirical Strategy}\label{subsec:empirical_strategy}
-We use the following intention to treat (ITT) estimation equation:
-
-\begin{equation}\label{eq_1}
-Z_{Y_{it, post}} = \gamma_0 + \gamma_1 Treat_i + \gamma_2 Z_{Y_{it, pre}} + \epsilon_{it}
+\begin{equation}
+    \label{eq:beliefs}
+    \text{Support}_{id} = \alpha + \beta_1 \, \text{Teacher}_{i} 
+    + \beta_2 \, \text{Post}_{t} 
+    + \delta \, (\text{Teacher}_{i} \times \text{Post}_{t})
+    + \mathbf{X}_{i}' \gamma 
+    + \mu_{d} + \varepsilon_{id},
 \end{equation}
 
-where $Z_{Y_{it, post}}$ represents our outcome of interest, represented by the endline standardized test score for Student $i$. Numeracy skills and literacy skills are our two main outcomes of interest. $\gamma_1$ is the treatment effect estimate, and $\gamma_2$ the co-efficient of the baseline standardized test score $Z_{Y_{it, pre}}$. We cluster our standard errors at the school level, which is our level of randomization.
+where $\text{Support}_{id}$ is an indicator equal to one if individual $i$ in district $d$ supports free primary education. $\text{Teacher}_{i}$ is a dummy for being a teacher, $\text{Post}_{t}$ is an indicator equal to one for survey rounds conducted after the reform (2005), and $\mathbf{X}_{i}$ is a vector of individual-level controls (age and education). District fixed effects $\mu_{d}$ absorb time-invariant unobserved heterogeneity, and standard errors are clustered at the district level. The coefficient of interest is $\delta$, which captures the differential change in support for FPE among teachers relative to non-teachers after the reform.  
 
-In our empirical analysis, as estimated in Equation \ref{eq_1}, in addition to using the standardized outcome variable $Z_{Y_{it}}$, we also run separate estimates using outcome sub-components. For example, for literacy, in addition to the standardized literacy index, we examine the effects on simple phrase reading, longer passage reading, and comprehension questions, while for numeracy, beyond the standardized numeracy index, we analyze individual components: number identification, number comparison, addition, sequencing, multiplication, and division. This approach allows us to capture both aggregate effects and potential heterogeneity across specific sub-domains of literacy and numeracy.
+\subsubsection{Rent-seeking}
+To examine teachers behavioral response to the FPE reform, I investigate whether they report an increase in rent-seeking behavior. I estimate an analogous model that captures changes in survey participants perception of teacher corruption, relative to other public servants corruption. Using other public servants' reported corruption (for example, police officers, judges etc) as a counterfactual helps to absorb general corruption trends within the country. I implement the following specification:  
+\vspace{-1.5em}
 
-\section{Results} \label{sec:results} %%%%%%%%%%%%%%%%%%%%%%%%% RESULTS %%%%%%%%%%%%
+\begin{equation}
+    \label{eq:rentseeking}
+    \text{Corruption}_{id} = \alpha + \theta_1 \, \text{Teacher}_{i} 
+    + \theta_2 \, \text{Post}_{t} 
+    + \kappa \, (\text{Teacher}_{i} \times \text{Post}_{t})
+    + \mathbf{X}_{i}' \lambda 
+    + \mu_{d} + \varepsilon_{id},
+\end{equation}
 
-\subsection{Baseline characteristics and balance table}\label{subsec:background}
-Table \ref{tab:table1}, our balance table, presents the characteristics of study participants in both the treatment and control groups, confirming that the samples were balanced on observables at baseline. The first section aggregates the various functional difficulties (FDs) identified among children into six major disability domains. The most prevalent FD in the sampled schools was learning-related, with 48\% of the sample screening positive. Visual FD was observed in 18\% of participants, while 17\% had auditory FD. Approximately 8\% were identified with physical FD. Additionally, 4\% of the sample exhibited behavior-related FDs, and 5\% had multiple FDs.\footnote{This functional difficulty categorization reflects the domains as aggregated by the research team, based on the categories used by the County Disability Assessment Office, and aggregated by the researchers}  
-\begingroup
-\setlength{\tabcolsep}{2pt}  % Increase space between columns
-\begin{table}[h!]
-   \begin{singlespace}
-    \centering
-    \fontsize{10pt}{9pt}\selectfont  % Sets the font size locally inside the table
-    \begin{threeparttable}
-            \input{03_tables/table1}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}:  Table shows the balance table of our treated and control samples at baseline. The assessment officers reported 13 FD categories, which we consolidate into 6 FD domains. The specific literacy and numeracy test questions are shown in Appendices \ref{appendix:literacy_tests} and \ref{appendix:numeracy_tests} respectively. The mental well-being measures are based on likert scale questions each with 1-5 responses (lowest to highest). Our p-values are robust and clustered at the school level with the following significance levels: {$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}.
-        \end{tablenotes}
-    \end{threeparttable}
-    \end{singlespace}
-\end{table}
-\endgroup
+where $\text{Corruption}_{id}$ equals one if individual $i$ in district $d$ reports that a public servant is corrupt. $\text{Teacher}_{i}$ is a binary representing whether the teacher is the public servant in question and 0 if other public servant. All other variables are defined as above. The coefficient of interest $\kappa$ measures the extent to which teachers are more likely to engage in rent-seeking in the post-reform period relative to the pre-reform period, relative to other public servants.  
 
-Less than half of our sample (42\%) were female, with an average age of approximately 11.34 years. According to \textcite{kenya_institute_of_curriculum_development_basic_2019}, students in Grades 3, 4, and 5 are expected to be 8, 9, and 10 years old, respectively. This suggests that most participants were at least one or two grade levels behind the expected school level, likely due to delayed school entry or slower academic progression which is typical among children with functional difficulties. The average household poverty probability index was 67\%, indicating a high incidence of poverty among our sample. On average, participants had attended school under four days in the previous week and spent approximately 45 minutes studying at home the previous day.
+Both specifications are estimated using weighted least squares with Afrobarometer sampling weights, and standard errors are clustered at the district level. 
 
-Although most participants (60\%) could read a simple 14-word phrase, they could, on average, read only about 30 words from a 72-word paragraph. Comprehension skills were also quite low, with children correctly answering just 28\% of the comprehension questions related to the longer passage.
+\section{Background characteristics}
 
-Numeracy skills were similarly weak and declined significantly with increasing difficulty. For instance, while participants could identify 2 of 3 numbers shown to them, they correctly solved only about 1 of 3 of division-related questions. To put this into perspective, the Kenyan curriculum expects pupils with low vision—a functional disability—to solve division problems involving two-digit numbers, such as 60 divided by 10, by the end of Grade 3 (\cite{government_of_kenya_mathematics_2017}). All three division questions in our baseline test fell within this threshold.\footnote{See specific literacy and numeracy questions in Appendices \ref{appendix:literacy_tests} and \ref{appendix:numeracy_tests}, respectively.} However, despite our sample consisting primarily of students in Grades 3-5, they were able to correctly answer, on average, only one.
-
-\subsection{Intervention take-up} %%%%%%%%%%%% NUMERACY AND LITERACY %%%%%%%%%%%%%%%%%%
-We present findings on the take-up of the intervention in Table \ref{tab:table_anton_usage}. Take-up was near-universal, with 99\% of treatment group participants accepting the tablet. Eight months post-intervention, 92\% of participants still had their tablet, though only 77\% were functional. The reported primary reasons for tablet malfunction were broken screens that were no longer responsive or damage from falls. Tablet usage varied considerably among participants. Over the eight-month period, the average duration of app activity was an average of 20 days. On days when participants engaged with the app, they spent an average of 48 minutes studying. About, 89\% of participants used the app to study Math at least once, while 92\% studied English at least once.
-
-\begingroup
-\setlength{\tabcolsep}{30pt}  % Increase space between columns
-\begin{table}[H]
-   \begin{singlespace}
-    \centering
-    \fontsize{11pt}{10pt}\selectfont  % Sets the font size locally inside the table
-    \begin{threeparttable}
-            \input{03_tables/table_anton_usage}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \item \textbf{Notes}:  Table presents summary statistics for the intervention usage as reported by the child, or based on app usage data downloaded directly from the ANTON server.
-        \end{tablenotes}
-    \end{threeparttable}
-    \end{singlespace}
-\end{table}
-\endgroup
-
-\subsection{Effects on literacy and numeracy outcomes} %%%%%%%%%%%% NUMERACY AND LITERACY %%%%%%%%%%%%%%%%%%
-\subsubsection{Intention to treat effects} %%%%%%%%%%%% AVERAGE TREATMENT EFFECTS %%%%%%%%%%%%%%%%%%
-We present our intention to treat (ITT) effects in Table \ref{reg_main_outcomes}. Models 1–3 display literacy outcomes, while Models 4–6 present numeracy outcomes under varying specifications. In Models 1 and 4, treatment effects are estimated without any controls, though standard errors are clustered at the school level. Models 2 and 5 incorporate controls for students' baseline scores, while Models 3 and 6 add further co-variates, including child age, gender, school grade, female household head’s years of education, and household poverty likelihood. The results across Models 2, 3, 5, and 6 indicate that our findings are robust to the inclusion of child- and household-specific controls. For the remainder of the paper, we base our analysis and discussion on the specifications in Models 2 and 5, as outlined in our empirical strategy (Equation \ref{eq_1}, Section \ref{subsec:empirical_strategy}). 
-
-\begingroup
-\setlength{\tabcolsep}{4pt}  % Increase space between columns
-\begin{table}[h!]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{10pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Treatment effects - aggregate numeracy and literacy outcomes} \label{reg_main_outcomes}
-    \resizebox{0.85\textwidth}{!}{%
-    \begin{threeparttable}
-        \input{03_tables/reg_main_outcomes}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: Table shows the ITT effects of our EdTech intervention on literacy and numeracy outcomes. We report \textbf{p-values} in parenthesis. Both numeracy and literacy outcomes are standardized z-scores, which combine several observed measures from a standardized test. The literacy index includes: whether the child can read a simple phrase; number of correct questions related to the simple phrase (out of 2); the number of words the child can read from a 72-word passage; and number of correctly answered questions related to the longer passage (out of 5). The numeracy index comprises the number of correct responses to: four number identification questions; three number comparison questions; four addition questions; three skip-pattern questions; four multiplication questions; and four division questions. Cluster-robust standard errors in parenthesis with the following significance levels: {$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}.
-        \end{tablenotes}
-    \end{threeparttable}}
-    \end{singlespace}
-\end{table}
-\endgroup
-
-We find positive effects of the EdTech intervention on literacy scores with the treatment increasing literacy scores by 0.15 standard deviations (p=0.07). Similarly, we find positive effects of the intervention on numeracy skills, with the treatment increasing numeracy scores by 0.13 standard deviations (p=0.10). To contextualize our findings, the effect sizes we observe for literacy outcomes surpass the 50th percentile of effect sizes reported in most field experiments that measure literacy improvements while those observed on numeracy surpass the 70th percentile of interventions targeted at improving numeracy skills (\cite{evans_how_2022}).\footnote{The distribution of literacy impacts is p25 = 0.03, p50 = 0.14, p75 = 0.32 while for numeracy is p25 = 0.01, p50 = 0.07, p75 = 0.15. These are distribution of learning impacts for all studies reported in the \textcite{evans_how_2022} paper, not specifically those focusing on children with functional difficulties.} 
-
-\afterpage{\begin{landscape}
-\begingroup
-\setlength{\tabcolsep}{0.1pt}  % Increase space between columns
-\begin{table}[htbp]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Treatment effects- disaggregated numeracy and literacy outcomes} \label{reg_combined_main}
-    \resizebox{1.35\textwidth}{!}{%
-    \begin{threeparttable}
-            \input{03_tables/reg_combined_main}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: We report \textbf{p-values} in parenthesis. The literacy measures include:  a binary indicator for whether the child can read a simple phrase; whether they correctly answer two comprehension questions related to the simple phrase; the number of words the child can read from a 72-word passage; and a binary indicator for whether they correctly answer five comprehension questions related to the longer passage. The numeracy measures comprises: the number of correct responses to four number identification questions; the number of correct responses to three number comparison questions; the number of addition questions (out of four) answered correctly; the number of correct responses to three skip-pattern questions; the number of correct answers to four multiplication questions; and the number of correct responses to three division questions. We cluster our robust standard errors at the school level.
-        \end{tablenotes}
-    \end{threeparttable}
-    }
-    \end{singlespace}
-\end{table}
-\endgroup
-\end{landscape}}
-
-In Table \ref{reg_combined_main}, we present our results of the effects of the treatment across disaggregated literacy and numeracy measures, providing insights into how the intervention influences various aspects of learning outcomes. Our first literacy outcome, \textit{Read}, indicates whether the child could read a simple phrase, while outcomes \textit{Q1} and \textit{Q2} measure whether they could answer comprehension questions related to the simple phrase. We categorize these as lower-order literacy skills. The third literacy outcome, \textit{Words}, reflects the number of words a child could read correctly from a 72-word passage. Outcomes \textit{Q3}-\textit{Q7} assess how many of five comprehension questions related to this passage the child could answer correctly, representing higher-order literacy skills.\footnote{See Appendix \ref{appendix:literacy_tests} for literacy specific questions.}
-
-On numeracy, the first outcome, \textit{Idnt.}, measures how many numbers—out of four—a child could correctly identify. The \textit{Comp.} outcome measures the ability to correctly compare number pairs. We categorize these as lower-order cognitive numeracy skills. Conversely, \textit{Add} measures the number of four addition problems solved correctly, and \textit{Skip} evaluates the number of three number sequence problems completed correctly. The outcomes \textit{Mult} and \textit{Div} assess performance on four multiplication and three division questions each. We consider the latter four measures as higher-order cognitive numeracy skills.\footnote{See Appendix \ref{appendix:numeracy_tests} for numeracy specific questions.} Our notion of higher-versus lower-order cognitive skills is backed by the fact that we generally observe that the proportion of children correctly answering questions decreases with increasing difficulty (see the control sample endline mean scores in Table \ref{reg_combined_main}).
-
-We find that the technological intervention has an effect only on; lower-order literacy skills and; higher-order cognitive numeracy skills. On literacy, we see effects on their ability to read the simple phrase and answer its associated questions–treated children are 8 percentage points (pp) more likely to read the simple phrase, and 9pp and 7pp  more likely to correctly answer the two questions related to the passage– but no effect on the longer passage or its associated questions. On numeracy, we find no significant effect on lower-order cognitive skills, but a significant effect on two of four higher order skills—a 10\% and 21\% change in addition and multiplication competencies respectively following the EdTech intervention. These results, even though capturing short term effects, suggest that our participants' numeracy and literacy skills may respond differently to EdTech interventions. 
-
-\subsection{Possible mechanisms} %%%%%%%%%%%% Mechanisms %%%%%%%%%%%%%%%%%%
-\subsubsection{Intervention dose-response} %%%%%%%%%%%% LATE %%%%%%%%%%%%%%%%%%
-One of the main mechanisms through which an EdTech intervention may influence learning outcomes is the level and type of engagement users have with the intervention. Engagement may affect outcomes at the extensive margin—for example, how frequently a child uses the app in terms of days, weeks, or minutes per active session—or at the intensive margin, which refers to the specific type of content the child interacts with, even if the total time spent on the app remains unchanged. One key aspect of intensive engagement is the level of ease of the material covered. On the app, study engagement involves answering in-session questions, allowing us to measure the difficulty of the material studied. In our context, we define ease as the proportion of attempted items that a user answers correctly. We test these mechanisms to determine whether they explain the literacy gains observed in our main results.
-
-\begingroup
-\setlength{\tabcolsep}{18pt}  % Increase space between columns
-\begin{table}[h!]
-   \begin{singlespace}
-    \centering
-    \fontsize{11pt}{11pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Intervention dose-response} \label{reg_main_usage}
-    %\resizebox{0.8\textwidth}{!}{%
-    \begin{threeparttable}
-        \input{03_tables/reg_main_usage}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: Table shows outcomes by intervention dosage, and focuses only on treated sample (n = 292). Both numeracy and literacy outcomes are standardized z-scores, which combine several observed measures from a standardized test. Each panel includes baseline Z-score as control. The literacy index includes: whether the child can read a simple phrase; number of correct questions related to the simple phrase (out of 2); the number of words the child can read from a 72-word passage; and number of correctly answered questions related to the longer passage (out of 5). The numeracy index comprises the number of correct responses to: four number identification questions; three number comparison questions; four addition questions; three skip-pattern questions; four multiplication questions; and four division questions. Includes baseline controls such as gender, age, poverty likelihood, and female household head years of education as controls. Cluster-robust standard errors in parenthesis with the following significance levels: {$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}.
-        \end{tablenotes}
-    \end{threeparttable}
-    %}
-    \end{singlespace}
-\end{table}
-\endgroup
+TBD
 
 
-Our results indicate that intensive margin usage is more important than extensive margin usage in driving learning outcomes (Table \ref{reg_main_usage}). Specifically, the number of days and months active (Panels A,B), as well as the total time spent on the app (Panel C), does not significantly affect post-intervention test scores. Similarly, the total number of activities a user engages in on a specific subject (Panel D) does not appear to influence literacy or numeracy outcomes. However, the level of ease of the material a user interacts with may play a role in determining test scores (Panel E). Users who study material that aligns closely with their comfortable learning level are more likely to achieve higher scores than those engaging with content that is significantly more difficult (90\% confidence interval). This effect is observed only for literacy outcomes, consistent with the aggregate effects of the EdTech intervention.
-
-\subsubsection{Other possible mechanisms} %%%%%%%%%%%% SOCIAL INTERACTIONS %%%%%%%%%%%%%%%%%%
-We also explore other possible mechanisms through which the intervention may have influenced our outcomes and present our results in Table \ref{tab:reg_mechanisms}.
-
-One alternative mechanism through which EdTech interventions might influence literacy or numeracy rates is by altering students' interest in school or schooling activities, as well as their interactions with peers and teachers. We do not observe any significant differences in interest in attending school, participation in school events, or conflicts with teachers or peers among the treatment group following the intervention.
-
-\begingroup
-\setlength{\tabcolsep}{4pt}  % Increase space between columns
-\begin{table}[h]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Other potential mechanisms} \label{tab:reg_mechanisms}
-    \resizebox{0.8\textwidth}{!}{%
-    \begin{threeparttable}
-        \input{03_tables/reg_mechanisms}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: The table presents estimates of observed changes in other potential mechanisms through which EdTech may influence learning outcomes. Model 1 indicates whether the child expresses interest in attending school and participating in school events. A response is coded as 1 if the child reports liking to attend school or participate in school activities quite a lot of the time or all of the time. Model 2 examines changes in conflicts with teachers and peers, coded as 1 if the child reports having conflicts with teachers or friends quite a lot of the time or all of the time. Model 3 reports whether the child studied at home the previous day. Model 4 captures changes in mental health (MH), measured using the Stirling Children’s Well-Being Scale (\cite{liddle_emotional_2015}), with scores ranging from 12 to 60. \textbf{p-values} in parentheses. Disaggregated results can be found in Appendix \ref{tab:reg_mechanisms_all}.
-        \end{tablenotes}
-    \end{threeparttable}}
-    \end{singlespace}
-\end{table}
-\endgroup
-
-A second potential mechanism through which the intervention might influence learning outcomes is by altering the amount of time children dedicate to studying. Changes in literacy or numeracy outcomes might, therefore, reflect increased effort rather than the direct impact of the technology itself. To examine this possibility, we analyze whether the intervention led to significant changes in the amount of time children spent studying at home. As part of our survey, children were asked to report the number of hours they spent studying or completing homework on the previous day. The results indicate no significant differences between the treatment and control groups in the amount of time children spent studying, either individually or with others in the household.
-
-Third, we investigate whether our observed effects might be attributed to changes in mental health or well-being arising from the provision of a sophisticated device. The rationale is that the endowment of such a device could potentially enhance participants’ hapiness, self-esteem, adapatability, positivity or desire to learn, which, in turn, might influence learning outcomes. To assess mental health and well-being in our study, we used the Stirling Children's Well-being Scale (SCWBS), a validated instrument designed to evaluate emotional and mental well-being in educational and health contexts (\cite{liddle_emotional_2015}). The SCWBS measures three core dimensions: positive emotional state, positive outlook, and social desirability, along with an aggregate metric that combines the first two dimensions.
-
-We find no significant changes in mental health status post-intervention,\footnote{We also do not find significant differences in the dissagregated mental health measures any of these measures (Appendix \ref{tab:reg_mechanisms_all})} suggesting that the intervention did not affect the mental health or overall well-being of the targeted children. We can thus conclude that in our setting, changes in mental health status is unlikely to have been a key mechanism through which the intervention influenced our literacy or numeracy effects.
+\section{Results}
 
 
-\subsection{Sibling spillovers} %%%%%%%%%%%% SPILLOVERS %%%%%%%%%%%%%%%%%%
-We also investigate whether the intervention generated treatment spillovers to the siblings of treated children.\footnote{Details on the selection of siblings are discussed in Section \ref{subsec:sibling_selection}} During the baseline and endline surveys, we administered our standardized test to 264 and 233 sibling respectively. However, there is minimal overlap in the siblings interviewed in both surveys—only 67 siblings in total. Given the relatively small size of the final matched sample, we estimate sibling spillover effects using data from the 233 siblings interviewed at endline, controlling for observed covariates. Since we are unable to assess baseline balance for this subsample, as baseline data were not collected for all siblings, we do not include baseline scores as a covariate in the analysis.\footnote{However, as shown in our main outcome results in Table \ref{reg_main_outcomes}, the inclusion of baseline scores primarily serves to reduce the standard errors, with minimal impact on the estimated effect sizes.}
+\end{singlespace}
 
-We do not find evidence of sibling spillover effects on either numeracy or literacy outcomes (Table \ref{reg_siblings}). With the exception of number comparisons, where we observe a significant positive effect, there are no statistically significant differences across the disaggregated literacy or numeracy outcomes. One potential explanation for this finding may be that treated children did not share their tablet with their siblings, thus limiting the likelihood that siblings benefit from the intervention as well. However, as shown in Table \ref{tab:table_anton_usage}, two out of every three treated children reported that their tablet had also been used by at least one other sibling in the household, and with most siblings reportedly using the device at least once a week or more. We thus rule out the lack of device sharing as an explanation for the absence of sibling spillovers.
-
-Some alternative arguments may explain this finding. First, it is possible that the siblings we interviewed were not the ones who shared the tablet—indeed, at least half of all siblings in the household never used the device that was issued to the treated child (Table \ref{tab:table_anton_usage}). Second, the treated child may have personalized the content on the app to match their skill level and learning progress, thus limiting the effectiveness of the content for siblings who were likely at different developmental stages.
-
-\subsection{Heterogeneity analysis}
-In this subsection, we explore some heterogeneity in treatment effects by gender, school grade, baseline literacy and numeracy levels and by functional difficulty domain.
-
-In terms of gender differences, females with functional difficulties (FD) exhibit significantly higher baseline literacy skills than their male counterparts, suggesting pre-existing gender gaps in literacy. However, no significant gender differences are observed in baseline numeracy skills (Table \ref{reg_combined_gender}). When examining heterogeneous treatment effects by gender, we observe some weak evidence that treated females benefit less from the intervention than males on both aggregate literacy and numeracy measures, although these effects are not statistically significant (-0.20 SD; p=0.15 for literacy, and -0.18 SD; p=0.20 for numeracy), likely due to limited statistical power.
-
-We observe stronger gender differences when disaggregating the outcome measures. While both male and female students appear to benefit similarly on lower-order literacy skills, treated female students perform significantly worse than males on higher-order literacy tasks—reading, on average, 10 fewer words post-intervention (p = 0.06). We observe a similar pattern for numeracy: treated female students demonstrate significantly lower gains in higher-order numeracy skills, particularly in multiplication and division (42\% (p=0.02) and 37\% (p=0.07) fewer correct responses respectively). 
-
-We do not find any heterogeneous effects by school grade–treated children in the lowest grade (Grade 3), benefit equally from the intervention to their higher grade peers (Table \ref{reg_combined_grade})– or by baseline numeracy or literacy levels, meaning that children with lower baseline scores also benefit equally from the intervention as their counterparts with higher baseline scores (Table \ref{reg_bl_quintiles}).
-
-When disaggregating by functional difficulty (FD) domain, we find that treated children with physical and behavioral FDs benefit the most from the intervention, particularly in literacy outcomes (Table \ref{reg_main_outcomes_fd}). One possible explanation for this pattern is that these two FD domains are likely to have the greatest negative impact on school attendance. As a result, the EdTech intervention may help mitigate learning losses associated with irregular attendance. Conversely, children with auditory and learning FDs appear to benefit the least from the intervention, especially in literacy skills. In the case of children with auditory FDs, this finding may be attributed to a key feature of the app—the use of spoken instructions—which could limit its effectiveness for users with hearing impairments.
-
-\subsection{Cost-effectiveness analysis}
-Lastly, we evaluate the cost-effectiveness of our intervention, an important analysis for making scaling considerations. In our intervention, each child was assigned a tablet costing USD 85 (KES 11,000) and a solar panel costing USD 16 (KES 2,100). The ANTON app is freely available for individual use without cost. Since our primary outcomes of interest are gains in literacy and numeracy, measured in standard deviations, we calculate cost-effectiveness as follows:
-
-\[
-\small\text{Cost per SD Gain} = \frac{\text{Cost per student of the EdTech Intervention}}{\text{SD Change in Literacy/Numeracy}}
-\]
-\vspace{1cm}
-
-Using the numeracy and literacy effect sizes reported in Table \ref{reg_main_outcomes} and our cost-effectiveness ratio formula, we find that the cost-effectiveness of our intervention is USD 68 per student per 0.1 SD gain in literacy outcomes (0.022 SD per USD 10 spent) and USD 89 per student per 0.1 SD gain in numeracy outcomes (0.015 SD per USD 10 spent). For context, the median cost-effectiveness of other self-led learning interventions is 0.28 SD per USD 10 (\cite{rodriguez-segura_edtech_2022}), making our intervention a rather costly one. However, an important distinction between our study and the others is that these interventions do not specifically target learning outcomes for children with functional difficulties. Moreover, in most self-led learning interventions, tablets are not provided to students for personal ownership, which has implications for the cost-effectiveness ratio. In Kenya, the cost per 0.1 SD test score gain for other learning interventions is USD 1.36 for teacher incentives and USD 5.61 for textbook provisions (\cite{mcewan_cost-effectiveness_2012}). 
-
-\section{Conclusion} \label{sec:conclusions} %%%%%% CONCLUSIONS %%%%%%%%%%%%
-This study evaluated the impact of an EdTech intervention on literacy and numeracy outcomes for children with functional difficulties in rural Kenya. Our study provided treatment group children with tablets preloaded with a learning app–ANTON. The app provided offline accessible curriculum-aligned, self-paced, self-regulated and numeracy and literacy content. 
-
-Eight months after the intervention, we find that the EdTech intervention improves both literacy and numeracy outcomes, with effect sizes larger than the 50th  and 70th percentile of outcomes reported in other literacy and numeracy studies. Treated children report a 0.15 standard deviation increase in literacy scores, driven primarily by improvements in lower-order literacy skills, such as the ability to read simple phrases and answer related comprehension questions. On the other hand, we find a 0.133 standard deviation increase in numeracy scores primarily driven by changes higher-order numeracy skills, such as addition and multiplication, but not on lower-order skills like number identification or number comparisons.
-
-Our heterogeneity analysis identifies important variations in treatment effects across subgroups. Male treated chidlren seem to benefit more from the intervention that their female peers, particularity on higher-order numeracy and literacy skills. Furthermore, chidlren with physical and behavior functional difficulties benefit the most, while those with learning and auditory difficulties benefit the least. We, however, do not observe any heterogenous effects by school grade or by baseline literacy or numeracy rates. 
-
-Treatment compliance seems to be the most important mechanism through which the intervention impacts our outcomes, suggesting that the effectiveness of EdTech interventions is closely tied to intervention usage. However, we do not find  evidence that changes in study time, perceptions of school, school social interactions, or mental health and well-being might be mechanisms at play. We also do not find any significant spillover effects to the siblings of our treated sample. 
-
-These results have important implications for policymakers and practitioners seeking to address the learning gaps faced by children with functional difficulties in low-income settings. Our results on the role of our intervention on literacy and numeracy outcomes demonstrate the potential of technology-enabled learning tools to complement traditional educational approaches, particularly for children with functional difficulties who may face barriers to regular school attendance or require personalized learning support. To maximize the impact of EdTech interventions, policymakers should prioritize strategies that promote consistent device usage.
-
-While our results provide promising evidence of positive impacts for children with functional difficulties, they also raise several important avenues for future inquiry. For example, from a comparative lens, an open question remains as to whether such interventions would yield similar—or potentially larger—effects among children without disabilities. Understanding this counterfactual is important not only for gauging the generalizability of EdTech solutions, but also for identifying potential heterogeneity in treatment effects based on disability status. A second question is the value of customized versus universal design in educational interventions. Our intervention was not tailored to the specific needs of children with disabilities. This opens up the question of optimal design: would a more targeted intervention—one that incorporates assistive features such as braille or is explicitly designed for specific functional difficulties such as those with low vision or hearing impairments—generate stronger effects? Finally, our intervention was designed as a self-paced, self-regulated learning experience. Yet, a large body of behavioral evidence suggests that external scaffolding—such as teacher or parental engagement—can significantly amplify learning. Future research might examine whether supplementing EdTech interventions with structured support increases adherence and enhances learning outcomes, particularly for more disadvantaged learners.
 \newpage
 
 \singlespacing
-\end{singlespace}
 
-\printbibliography
-\pagebreak 
-\newpage
+%This text contains \charactercount{main} characters.
 
-\appendix
-%\setcounter{section}{0}
-%\renewcommand{\thesection}{B\arabic{section}}
-
-\section{Appendices} %%%%%%%% Appendices %%%%%%%%%%%%%%
-\setcounter{figure}{0}
-\renewcommand{\thefigure}{B\arabic{figure}}
-
-\setcounter{table}{0}
-\renewcommand{\thetable}{B\arabic{table}}
-
-\subsection{Intervention}
-
-\begin{singlespace}
-\begin{figure}[H]
-\centering
-\caption{Tablet}\label{fig:intervention_tablet}
-\frame{\includegraphics[scale=0.15]{06_intervention/tablet1.png}}
-\frame{\includegraphics[scale=0.194]{06_intervention/tablet2.png}}
-\begin{minipage}{0.95\linewidth}
-\vspace{3pt}
-\footnotesize{\justify\textbf{Notes}: Tablet issued to study participants for studying the educational material. Tablets were issued immediately after the baseline survey, while solar panels were distributed three months later.}
-\end{minipage}
-\end{figure}
-\end{singlespace}
-
-
-\begin{singlespace}
-\begin{figure}[H]
-\centering
-\caption{Solar panel}\label{fig:intervention_panel}
-\frame{\includegraphics[scale=0.195]{06_intervention/panel.png}}
-\begin{minipage}{0.55\linewidth}
-\vspace{3pt}
-\footnotesize{\justify\textbf{Notes}: Solar panel issued to study participants for charging the tablets.}
-\end{minipage}
-\end{figure}
-\end{singlespace}
-
-
-\begin{singlespace}
-\begin{figure}[H]
-\centering
-\caption{Anton App}\label{fig:intervention_anton}
-\frame{\includegraphics[scale=0.095]{06_intervention/anton1.jpeg}}
-\frame{\includegraphics[scale=0.096]{06_intervention/anton2.jpeg}}
-\frame{\includegraphics[scale=0.095]{06_intervention/anton3.jpeg}}
-\frame{\includegraphics[scale=0.094]{06_intervention/anton4.jpeg}}
-\begin{minipage}{0.98\linewidth}
-\vspace{3pt}
-\footnotesize{\justify\textbf{Notes}: Screenshots of some learning content available on the ANTON app. Image 1 displays English Year 1 materials, while Image 2 features "Common Exception Words" exercises from English Year 2. Image 3 showcases Math Year 3 exercises, and Image 4 highlights multiplication and division exercises from Math Year 5. The authors do not own or claim rights to the content shown or the app itself.}
-\end{minipage}
-\end{figure}
-\end{singlespace}
-
-
-\subsection{Functional difficulty (FD) screening}
-
-\begingroup
-\setlength{\tabcolsep}{2pt}  % Increase space between columns
-\begin{table}[H]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \resizebox{0.6\textwidth}{!}{%
-    \begin{threeparttable}
-        \input{03_tables/assessment_table}
-        \begin{tablenotes}
-            \vspace{-4mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: Table shows a summary of the children who were screened by the CDAOs and the final Functional Disability (FD) status by Grade. Only children in Grades 3,4 and 5 were targeted for screening, hence the higher proportions in those Grades. Some caregivers of children in the other Grades also showed up for the assessment.
-        \end{tablenotes}
-    \end{threeparttable}}
-    \end{singlespace}
-\end{table}
-\endgroup
-
-\subsection{Attrition}\label{appendix:item_1}
-
-\begingroup
-\setlength{\tabcolsep}{8pt}  % Increase space between columns
-\begin{table}[H]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \resizebox{0.7\textwidth}{!}{%
-    \begin{threeparttable}
-        \input{03_tables/attrition}
-        \begin{tablenotes}
-            \vspace{-4mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: Table shows attrition at endline, reporting both parent survey and child survey attrition. Attrition rates are lower for the child survey given in some cases the parent/caregiver provided consent for the survey to be administered on the child via phone, even though the parent/caregiver themselves were absent for an extended period.
-        \end{tablenotes}
-    \end{threeparttable}}
-    \end{singlespace}
-\end{table}
-\endgroup
-
-\subsection{Distribution of study children by class and school}\label{child_school}
-
-\begin{singlespace}
-\begin{figure}[H]
-\centering
-\caption{Distribution by school}\label{fig:g_dist_child_school}
-\includegraphics[scale=0.5]{04_graphs/dist_child_school.png}
-\includegraphics[scale=0.5]{04_graphs/denst_child_school.png}
-\begin{minipage}{0.7\linewidth}
-\vspace{3pt}
-\footnotesize{\justify\textbf{Notes}: The figure plots histogram and density plot to show the distribution of children per school}
-\end{minipage}
-\end{figure}
-\end{singlespace}
-
-\begin{singlespace}
-\begin{figure}[H]
-\centering
-\caption{Distribution by class}\label{fig:g_dist_child_class}
-\includegraphics[scale=0.5]{04_graphs/dist_child_class.png}
-\includegraphics[scale=0.5]{04_graphs/denst_child_class.png}
-\begin{minipage}{0.7\linewidth}
-\vspace{3pt}
-\footnotesize{\justify\textbf{Notes}: The figure plots histogram and density plot to show the distribution of children per class in a school. In each school, we sample children from Grades 3, 4 and 5.}
-\end{minipage}
-\end{figure}
-\end{singlespace}
-
-\subsection{Sibling balance table}\label{appendix:table1_s} %%%%%%%%%%%%%%% balance_table for siblings %%%%%%%%%%%%%%%%%%%
-\begingroup
-\setlength{\tabcolsep}{2pt}  % Increase space between columns
-\begin{table}[H]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \resizebox{0.83\textwidth}{!}{%
-    \begin{threeparttable}
-        \input{03_tables/table1_s}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: Table shows the balance table of the siblings of our study children at baseline, and only includes siblings who could be matched at endline. The specific literacy and numeracy test questions administered to the participants are shown in Appendix \ref{appendix:literacy_tests} and Appendix \ref{appendix:numeracy_tests} respectively.
-        \end{tablenotes}
-    \end{threeparttable}}
-    \end{singlespace}
-\end{table}
-\endgroup
-
-\begin{landscape}
-\subsection{Treatment heterogeneity}  %%%%%%%%%%%%%%% HETEROGENEITY RESULTS- DISAGREGATED %%%%%%%%%%%%%%%%%%%
-\begingroup %%%%%%%%%%% Gender %%%%%%%%%%%%%%
-\setlength{\tabcolsep}{0.1pt}  % Increase space between columns
-\begin{table}[H]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Treatment heterogeneity by gender- disaggregated} \label{reg_combined_gender}
-    \resizebox{1.35\textwidth}{!}{
-    \begin{threeparttable}
-            \input{03_tables/reg_combined_gender}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: The literacy measures include: a binary indicator for whether the child can read a simple phrase; whether they correctly answer two comprehension questions related to the simple phrase; the number of words the child can read from a 72-word passage; and a binary indicator for whether they correctly answer five comprehension questions related to the longer passage. The numeracy measures comprises: the number of correct responses to four number identification questions; the number of correct responses to three number comparison questions; the number of addition questions (out of four) answered correctly; the number of correct responses to three skip-pattern questions; the number of correct answers to four multiplication questions; and the number of correct responses to three division questions. For both numeracy and literacy outcomes, we include the aggregate "Agg." variable that combines the individual measures into a z-score. No additional co-variates except for baseline score included in regression. We cluster our standard errors at the school level (N=565, clusters=63). We report \textbf{p-values} in parenthesis.
-        \end{tablenotes}
-    \end{threeparttable}
-    }
-    \end{singlespace}
-\end{table}
-\endgroup
-\end{landscape}
-
-\begin{landscape}
-\begingroup %%%%%%%%%%% School Grade %%%%%%%%%%%%%%
-\setlength{\tabcolsep}{0.2pt}  % Increase space between columns
-\begin{table}[h!]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Treatment heterogeneity by school grade- disaggregated} \label{reg_combined_grade}
-    \resizebox{1.35\textwidth}{!}{
-    \begin{threeparttable}
-            \input{03_tables/reg_combined_grade}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: The literacy measures include:  a binary indicator for whether the child can read a simple phrase; whether they correctly answer two comprehension questions related to the simple phrase; the number of words the child can read from a 72-word passage; and a binary indicator for whether they correctly answer five comprehension questions related to the longer passage. The numeracy measures comprises: the number of correct responses to four number identification questions; the number of correct responses to three number comparison questions; the number of addition questions (out of four) answered correctly; the number of correct responses to three skip-pattern questions; the number of correct answers to four multiplication questions; and the number of correct responses to three division questions. For both numeracy and literacy outcomes, we include the aggregate "Agg." variable that combines the individual measures into a z-score. No additional co-variates except for baseline score included in regression. We cluster our standard errors at the school level (N=565, clusters=63). We report \textbf{p-values} in parenthesis.
-        \end{tablenotes}
-    \end{threeparttable}
-    }
-    \end{singlespace}
-\end{table}
-\endgroup
-\end{landscape}
-
-\begin{landscape}
-\begingroup %%%%%%%%%%% By baseline skills level %%%%%%%%%%%%%%
-\setlength{\tabcolsep}{0.1pt}  % Increase space between columns
-\begin{table}[H]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Treatment heterogeneity by baseline numeracy, literacy level} \label{reg_bl_quintiles}
-    \resizebox{1.35\textwidth}{!}{%
-    \begin{threeparttable}
-        \input{03_tables/reg_bl_quintiles}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: Table shows treatment effects by baseline numeracy, literacy level. The literacy index includes: whether the child can read a simple phrase; number of correct questions related to the simple phrase (out of 2); the number of words the child can read from a 72-word passage; and number of correctly answered questions related to the longer passage (out of 5). The numeracy index comprises the number of correct responses to: four number identification questions; three number comparison questions; four addition questions; three skip-pattern questions; four multiplication questions; and four division questions. For both numeracy and literacy outcomes, we include the aggregate "Agg." variable that combines the individual measures into a z-score. No additional co-variates except for baseline score included in regression. We cluster our standard errors at the school level (N=565, clusters=63). We report \textbf{p-values} in parenthesis.
-        \end{tablenotes}
-    \end{threeparttable}
-    }
-    \end{singlespace}
-\end{table}
-\endgroup
-\end{landscape}
-
-\begin{landscape}
-\begingroup
-\setlength{\tabcolsep}{0.02pt}  % Increase space between columns
-\begin{table}[h!]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Treatment heterogeneity by functional difficulty (FD)} \label{reg_main_outcomes_fd}
-    \resizebox{\textwidth}{!}{
-    \begin{threeparttable}
-            \input{03_tables/reg_main_outcomes_fd}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: Table shows treatment effects for a specific FD compared to other FDs. Both numeracy and literacy outcomes are standardized z-scores, which combine several observed measures from a standardized test. The literacy index includes: whether the child can read a simple phrase; number of correct questions related to the simple phrase (out of 2); the number of words the child can read from a 72-word passage; and number of correctly answered questions related to the longer passage (out of 5). The numeracy index comprises the number of correct responses to: four number identification questions; three number comparison questions; four addition questions; three skip-pattern questions; four multiplication questions; and four division questions. Includes baseline scores but no other covariates. We cluster our standard errors at the school level (N=565, clusters=63). We report \textbf{p-values} in parenthesis.
-        \end{tablenotes}
-    \end{threeparttable}
-    }
-    \end{singlespace}
-\end{table}
-\endgroup
-\end{landscape}  
-
-\begin{landscape}
-\subsection{Sibling spillovers}  %%%%%%%%%%%%%%% SPILLOVERS %%%%%%%%%%%%%%%%%%%
-\begingroup %%%%%%%%%%% Spilovers %%%%%%%%%%%%%%
-\setlength{\tabcolsep}{0.5pt}  % Increase space between columns
-\begin{table}[H]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Sibling spillover effects} \label{reg_siblings}
-    \resizebox{1.35\textwidth}{!}{%
-    \begin{threeparttable}
-            \input{03_tables/reg_siblings}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: Table shows the spillover effects to siblings of our treated sample. Only baseline siblings who could be matched at endline are included. The literacy index includes: whether the child can read a simple phrase; number of correct questions related to the simple phrase (out of 2); the number of words the child can read from a 72-word passage; and number of correctly answered questions related to the longer passage (out of 5). The numeracy index comprises the number of correct responses to: four number identification questions; three number comparison questions; four addition questions; three skip-pattern questions; four multiplication questions; and four division questions. We cluster our standard errors at the school level (of the study child) and report \textbf{p-values} in parenthesis.
-        \end{tablenotes}
-    \end{threeparttable}
-    }
-    \end{singlespace}
-\end{table}
-\endgroup
-\end{landscape}
-
-\begin{landscape} %%%%%%%%%%%%%%% MECHANISMS %%%%%%%%%%%%%%%%%%%
-\subsection{Mechanisms}  
-\begingroup
-\setlength{\tabcolsep}{3pt}  % Increase space between columns
-\begin{table}[H]
-   \begin{singlespace}
-    \centering
-    \fontsize{12pt}{12pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Mechanisms... disaggregated} \label{tab:reg_mechanisms_all}
-    \resizebox{1.2\textwidth}{!}{%
-    \begin{threeparttable}
-        \input{03_tables/reg_mechanisms_all}
-        \begin{tablenotes}
-            %\vspace{-2mm} % Adjust spacing as needed
-             \small % Adjust font size as needed
-            \textbf{Notes}: The table presents child self-reported school participation and social interactions. Models 1 and 2 capture binary responses indicating whether the child expresses interest in attending school and participating in school events, coded as 1 if the child reports liking to attend school or participate in school activities quite a lot of the time or all of the time. Models 3 and 4 measure conflicts with teachers and peers, coded as 1 if the child reports having conflicts with teachers or friends quite a lot of the time or all of the time. Models 5 and 6 resports hours spent at home reading by self and together with other household members. Models 7 to 9, report disaggregated mental health outcomes. including changes in positive emotions, positive outlook and social desirability. Social desirability measure is not included in the calculation of the overall mental health and well-being scores. Robust standard errors clustered at the school level are reported in parentheses. We report \textbf{p-values} in parenthesis. 
-        \end{tablenotes}
-    \end{threeparttable}}
-    \end{singlespace}
-\end{table}
-\endgroup
-\end{landscape}
-
-\subsection{Literacy tests}\label{appendix:literacy_tests} %%%%%%%%%%%%%%% numeracy %%%%%%%%%%%%%%%%%%%
-
-\subsubsection{Short passage}
-\begin{figure}[H]
-\centering
-\caption{Short passage}\label{fig:lit_passage_s}
-\frame{\includegraphics[scale=0.2]{05_placards/placards-01.png}}
-\footnotesize{\justify\textbf{Notes}: Short passage displayed to the participants as placards. Adapted from the Multiple Indicator Cluster Survey (MICS7)}
-\end{figure}
-\vspace{-12.5mm}
-\begin{table}[H]
-\begin{singlespace}
-    \centering
-    \fontsize{10pt}{9pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Short passage questions} \label{passage_s_questions}
-    \begin{tabular}{@{}p{0.4\textwidth}p{0.05\textwidth}p{0.5\textwidth}@{}}
-    \textbf{Question} & & \textbf{Response}\\
-    1. How old is Sam?	 & 0 & Other answer \\
-	& 1 &	5 years old \\
-	& 998 &	Did not answer or No response \\
-    & & \\
-    2. Who is older: Sam or Tina?	& 0	& Sam \\
-	& 1	& Tina \\
-	& 998 &	Did not answer or No response \\
-    \end{tabular}
-\end{singlespace}
-\end{table}
-
-
-\subsubsection{Long passage}
-\begin{figure}[H]
-\centering
-\caption{Long passage}\label{fig:lit_passage_l}
-\frame{\includegraphics[scale=0.2]{05_placards/placards-02.png}}
-\footnotesize{\justify\textbf{Notes}: Long passage displayed to the participants as placards. Adapted from the Multiple Indicator Cluster Survey (MICS7)}
-\end{figure}
-\vspace{-12.5mm}
-\begin{table}[H]
-\begin{singlespace}
-    \centering
-    \fontsize{10pt}{9pt}\selectfont  % Sets the font size locally inside the table
-    \caption{Long passage questions} \label{passage_l_questions}
-    \begin{tabular}{@{}p{0.4\textwidth}p{0.05\textwidth}p{0.5\textwidth}@{}}
-    \textbf{Question} & & \textbf{Response}\\
-3. What class is Moses in?	& 0	& Other response \\
-	& 1	& Two \\
-	& 998	& Did not answer or No response \\
-    & & \\
-4. What did Moses see on the way home?	& 0	& Other response \\
-	& 1	& Flowers \\
-	& 998 & Did not answer/ No response \\
-    & & \\
-5. Why did Moses start crying?	& 0	& Other response \\
-	& 1	& Because he fell \\
-	& 998	& Did not answer or No response \\
-    & & \\
-6. Where did Moses fall?	& 0	& Other response \\
-	& 1	& Near a banana tree \\
-	& 998	& Did not answer or No response \\
-    & & \\
-7. Why was Moses happy?	& 0	& Other response \\
-	& 1	& Because the farmer gave him many flowers or because he had flowers to give to his mother \\
-	& 998	& Did not answer or No response \\
-    \end{tabular}
-\end{singlespace}
-\end{table}
-
-\subsection{Numeracy tests}\label{appendix:numeracy_tests} %%%%%%%%%%%%%%% numeracy %%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[H]
-\centering
-\caption{Number identification questions}\label{fig:num_identification}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-03.png}}
-\footnotesize{\justify\textbf{Notes}: Child asked to point each number and tell what the number is. Adapted from the Multiple Indicator Cluster Survey (MICS7)}
-\end{figure}
-
-%%\subsubsection{Which number is bigger}
-\begin{figure}[H]
-\centering
-\caption{Number comparison questions}\label{fig:num_bigger}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-04.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-05.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-06.png}}
-\footnotesize{\justify\textbf{Notes}: Child asked to identify which number is bigger. Adapted from the Multiple Indicator Cluster Survey (MICS7)}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Addition questions}\label{fig:num_addition}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-07.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-08.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-09.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-10.png}}
-\footnotesize{\justify\textbf{Notes}: Placards with set of addition questions. Adapted from the Multiple Indicator Cluster Survey (MICS7)}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Skip pattern questions}\label{fig:num_skip}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-11.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-11_a.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-12.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-13.png}}
-\footnotesize{\justify\textbf{Notes}: Child asked to identify which number is missing from the sequence of numbers. Adapted from the Multiple Indicator Cluster Survey (MICS7). Skip pattern question 3, 6, \_, 12, is only asked at endline.}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
-\caption{Multiplication questions}\label{fig:num_multiplication}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-14.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-15.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-16.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-17.png}}
-\footnotesize{\justify\textbf{Notes}: Placards with set of multiplication questions. Adapted from the Multiple Indicator Cluster Survey (MICS7)}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\caption{Division questions}\label{fig:num_division}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-18.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-19.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-20.png}}
-\frame{\includegraphics[scale=0.14]{05_placards/placards-21.png}}
-\footnotesize{\justify\textbf{Notes}: Placards with set of division questions. Adapted from the Multiple Indicator Cluster Survey (MICS7). Division question 225 divided by 15 is only asked at endline.}
-\end{figure}
-
+\printbibliography[title={References}] \pagebreak 
 \end{document}
 
 
