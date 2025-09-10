@@ -1,0 +1,123 @@
+\documentclass[hidelinks,12pt]{article}
+
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{geometry} % Optional: For better control of page margins
+
+\usepackage{amssymb,amsmath,amsfonts,float,eurosym,geometry,ulem,graphicx,color,setspace,sectsty,comment,natbib,pdflscape,subfigure,array,booktabs}
+
+\usepackage[absolute,overlay]{textpos} % Allows absolute positioning
+\usepackage[bottom]{footmisc}
+\usepackage{afterpage}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\urlstyle{same}
+
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{dcolumn}
+
+\usepackage[style=apa, sorting=nyt]{biblatex}
+\addbibresource{cite.bib}
+
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+
+\usepackage[flushleft]{caption}
+\newcommand\fnote[1]{\captionsetup{font=footnotesize}\caption*{#1}}
+
+\usepackage[skip=10pt plus1pt, indent=0pt]{parskip}
+\usepackage[capposition=top]{floatrow}
+
+\newcommand{\tabnotes}[2]{\bottomrule \multicolumn{#1}{@{}p{0.70\linewidth}@{}}{\footnotesize #2 }\end{tabular}\end{table}}
+
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+
+\normalem
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}{Proposition}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{subhyp}{Hypothesis}[hyp]
+\renewcommand{\thesubhyp}{\thehyp\alph{subhyp}}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+
+\renewcommand{\arraystretch}{1.3}
+
+\geometry{left=1.0in,right=1.0in,top=1.0in,bottom=1.0in}
+
+%%% for flowcharts
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, text width=8.5cm, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=white]
+\tikzstyle{notes} = [rectangle, rounded corners, text width=4cm, minimum height=1cm, align=right, fill=white]
+\tikzstyle{process} = [rectangle, rounded corners, text width=4cm,  minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{decision} = [diamond, text width=2.5cm, text centered, draw=black, fill=white]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{document}
+
+
+\begin{singlespace}
+
+\begin{titlepage}
+\title{Bureaucrat Responses to Top-Down Policy Reforms: Does Free Primary Education Win Teacher Hearts but Lose Their Integrity? Evidence from Tanzania}
+%\title{Do Policies Shift Bureaucrat Beliefs? Evidence from Education Reforms and a Teacher Experiment}
+
+\author{Frank Odhiambo \thanks{Development Economics Group, University of G\"ottingen, Germany. E-mail: \href{mailto:frank.odhiambo89@gmail.com}{frank.odhiambo89@gmail.com}.}}
+
+\date{\today}
+\maketitle
+\begin{abstract}
+\begin{singlespace}
+Teachers are more likely to implement education policies effectively when those policies align with their pre-existing beliefs. However, little is known about whether and how those beliefs respond to policy changes. This paper examines the extent and mechanisms of belief updating among teachers in response to government policy. In the first stage, I exploit a natural experiment using survey data and a difference-in-differences design to estimate the causal impact of a major policy reform across several OECD countries—disability inclusive education—on teacher beliefs. I argue that such a policy reform presents a high-stakes scenario, given prevalent debate about the integration of persons with disability in mainstream educational settings. In the second stage, I implement a field experiment with primary school teachers in a low-income setting in sub-Saharan Africa, to test whether belief updating persists in a different setting and to identify specific causal mechanisms. Teachers are randomly assigned to one of three treatment arms involving exposure to information about two pertinent policy questions; AI tools in education and; inclusive education. The treatment arms include teacher narratives about each topic, student experiences of the same topics, or a combination of both teacher and student experiences with practical demonstrations. We also include a placebo control. Post-treatment beliefs are then measured to assess the effect of information type and source on belief updating, and whether effects vary given the policy issue. Together, I provide new evidence on when and how public sector professionals update beliefs in response to policy change and new information, with implications for education policy. \\
+\end{singlespace}
+
+\textbf{Keywords:} EdTech, literacy, numeracy, disability \\
+
+\bigskip
+\end{abstract}
+\setcounter{page}{0}
+\thispagestyle{empty}
+\end{titlepage}
+\pagebreak \newpage
+
+\onehalfspacing
+
+\section{Introduction} \label{sec:introduction} %%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%
+Teachers are more likely to implement policies effectively when those policies align with their existing beliefs. This belief-alignment is even more important in contexts where implementation fidelity is typically low, monitoring is costly, or government enforcement capacity is limited. This study investigates how teacher beliefs respond to policy changes. While the existing evidence shows that teacher beliefs can influence education policy or shape instructional behavior, little is known about how these beliefs are formed or shaped.
+
+In the first stage, I use data from Afrobarometer surveys in Tanzania and a difference-in-differences estimation strategy to causally identify the impact of a major policy reform—free primary education—on teacher beliefs. This quasi-experimental setting allows me to estimate belief updating in a high-stakes environment, where the policy change was preceded by substantial political debate, as is often the case with large-scale reforms like the introduction of free primary education.
+
+In the second stage, I conduct a field experiment to test whether the effects documented in the first stage persist in a lower-stakes but nonetheless policy-relevant setting, while simultaneously investigating the underlying mechanisms. I implement a within-survey experiment examining whether teachers update their beliefs about AI educational tools when presented with new information or evidence. My sample consists of primary school teachers from Kisumu County, Kenya—an ideal setting combining one of Kenya's three largest urban centers with substantial rural areas.
+
+The experimental design features three treatment arms. The first treatment provides teacher-information, where subjects view a video of a hypothetical teacher describing student experiences with AI and its efficacy in improving learning outcomes. The second treatment delivers student-experience information, with subjects viewing a video where a student directly recounts their experience using AI tools and the resulting learning improvements. The third treatment tests complementarity effects by combining either the teacher or student information with a practical demonstration of AI's educational applications. I combine these three treatment arms with a control group that also views a video discussing how engaging parents in homework or reading routines can improve learning, to rule out placebo effects due to attention or novelty. I then collect post-treatment beliefs.
+
+This design allows me to isolate specific causal channels through which teacher beliefs update—an important contribution to both the educational technology literature and our broader understanding of belief formation in professional contexts.
+\end{singlespace}
+\end{document}
+
+
