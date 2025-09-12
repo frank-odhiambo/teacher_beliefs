@@ -9,7 +9,7 @@ options(scipen = 999) # disable scientific notations for numerical answers
 
 ############################################################################################## Loading R Packages ##################
 packages <- c("dplyr", "ggthemes", "glue", "tidyverse", "pdftools", "here", "zoo", "estimatr", "lmtest", "xtable",
-              "robotoolbox", "labelled", "haven", "readxl", "xlsx", "data.table", "knitr", "sandwich", "texreg",
+              "robotoolbox", "labelled", "haven", "readxl", "xlsx", "data.table", "knitr", "sandwich", "texreg", "ggplot2",
               "readr", "tidyverse", "tm", "Hmisc", "gtsummary", "RCT", "vtable", "modelsummary", "writexl", "sf",
               "kableExtra", "eeptools", "stargazer", "stringr", "stringi", "purrr", "gt", "broom", "tinytable", "fixest",
               "sandwich", "lmtest", "clubSandwich", "irr", "ICC", "psych", "fwildclusterboot", "tableone", "janitor")
@@ -72,6 +72,9 @@ tzr1 <- tzr1 %>%
     diff_sch_child_placement_both = ifelse(Q80BB == 3, 1, ifelse(Q80BB == 8 | Q80BB == 9, NA, 0)),
     teachers_corrupt = ifelse(Q83H == 1 | Q83H == 2, 1, ifelse(Q83H == 9, NA, 0)),
     police_corrupt = ifelse(Q83C == 1 | Q83C == 2, 1, ifelse(Q83C == 9, NA, 0)),
+    judge_corrupt = ifelse(Q83E == 1 | Q83E == 2, 1, ifelse(Q83E == 9, NA, 0)),
+    mp_corrupt = ifelse(Q83A == 1 | Q83A == 2, 1, ifelse(Q83A == 9, NA, 0)), # in Round one framed as "Elected leaders"
+    #healthworker_corrupt = ifelse(Q83C == 1 | Q83C == 2, 1, ifelse(Q83C == 9, NA, 0)),
     district = str_to_title(district),
     educ = ifelse(educ_r1 <=3, "Primary", ifelse(educ_r1 >=4 & educ_r1 <=5, "Secondary", ifelse(educ_r1 == 10, NA, "Tertiary")))
   ) %>% 
@@ -116,6 +119,9 @@ tzr3 <- tzr3 %>%
     diff_hh_elec_connect = ifelse(Q71B == 3 | Q71B == 4, 1, ifelse(Q71B == 1 | Q71B == 2, 0, NA)),# Difficult to connect household to electricity
     teachers_corrupt = ifelse(Q56J == 2 | Q56J == 3, 1, ifelse(Q56J == 9, NA, 0)), # question framed differently though
     police_corrupt = ifelse(Q56F == 2 | Q56F == 3, 1, ifelse(Q56F == 9, NA, 0)), # question framed differently though
+    judge_corrupt = ifelse(Q56H == 2 | Q56H == 3, 1, ifelse(Q56H == 9, NA, 0)), # question framed differently though
+    mp_corrupt = ifelse(Q56B == 2 | Q56B == 3, 1, ifelse(Q56B == 9, NA, 0)),
+    #healthworker_corrupt = ifelse(Q56I == 2 | Q56I == 3, 1, ifelse(Q56I == 9, NA, 0)),
     paid_bribe_sch_yr = ifelse(Q57B== 0, 0, ifelse(is.na(Q57B) | Q57B == 9, NA, 1)), # paid bribe to get a child to school
     resp_knows_about_policy = ifelse(Q69A == 2, 1, ifelse(Q69A == 1, 0, NA)),
     district = str_to_title(district),
@@ -127,17 +133,63 @@ tzr3 <- tzr3 %>%
 ### Append r1 and r3 dataset
 tz <- bind_rows(tzr1, tzr3)
 
-## Main DID Model
+################################################# Main DID Model
 
 did_fe <- feols(
+  free_sch ~ treatment * teacher | district, # free_sch represents support for free education. 
+  data = tz,
+  weights = ~ withinwt,     # apply weights
+  cluster = ~ district      # cluster SEs at district level
+)
+
+did_fe1 <- feols(
+  free_sch ~ treatment * teacher + age + educ, # free_sch represents support for free education. 
+  data = tz,
+  weights = ~ withinwt,     # apply weights
+  cluster = ~ district      # cluster SEs at district level
+)
+
+did_fe2 <- feols(
   free_sch ~ treatment * teacher + age + educ | district, # free_sch represents support for free education. 
   data = tz,
   weights = ~ withinwt,     # apply weights
   cluster = ~ district      # cluster SEs at district level
 )
 
+# generate latex table
+texreg(list(did_fe, did_fe1, did_fe2), 
+       file = "02_tables/did_beliefs_main.tex", 
+       custom.note = "",
+       #custom.header = list("Literacy" = 1:3, "Numeracy" = 4:6),
+       custom.model.names = c("1", "2", "3"),
+       caption.above = TRUE, 
+       #dcolumn = TRUE,
+       booktabs = TRUE,
+       use.packages = FALSE,
+       custom.gof.rows = list(
+         "District FE" = c("Yes", "No", "Yes"),
+         "Controls" = c("No", "Yes", "Yes")
+       ),
+       custom.coef.map = list("treatment:teacher" = "Teacher x Post",
+                              "teacher" = "Teacher", 
+                              "treatment" = "Post", 
+                              "age" = "Age", 
+                              "educSecondary" = "Secondary education",
+                              "educTertiary" = "Tertiary education"
+                              ),
+       table = FALSE,
+       digits = 3,
+       ci.force = FALSE,       
+       include.ci = FALSE,    
+       single.row = FALSE,    
+       stars = c(0.01, 0.05, 0.1),
+       include.adjr = FALSE, 
+       include.rsquared = FALSE, 
+       include.rmse = FALSE,
+       include.nclusters = FALSE
+) 
 
-### Evidence of rent-seeking
+################################################# Evidence of rent-seeking
 #reshape data
 tz_long <- tz %>%
   select(educ, district, teachers_corrupt, police_corrupt, age, treatment, withinwt) %>% 
@@ -152,16 +204,78 @@ tz_long <- tz %>%
   select(-profession)
 
 ## Evidence of rent-seeking
-did_rentseeking <- feols(corrupt ~ teacher * treatment + educ + age | district, 
+did_rentseeking <- feols(corrupt ~ teacher * treatment + educ + age, 
+                         data = tz_long,
+                         weights = ~ withinwt)
+  
+did_rentseeking1 <- feols(corrupt ~ teacher * treatment + educ + age, 
                          data = tz_long,
                          weights = ~ withinwt,
                          cluster = ~district)
-  
 
-## Summaries
-summary(did_fe)
-summary(did_rentseeking)
-table(tzr$paid_bribe_sch_yr)
+did_rentseeking2 <- feols(corrupt ~ teacher * treatment + educ + age | district, 
+                         data = tz_long,
+                         weights = ~ withinwt,
+                         cluster = ~district)
+
+# generate latex table
+texreg(list(did_rentseeking, did_rentseeking1, did_rentseeking2), 
+       file = "02_tables/did_rent_main.tex", 
+       custom.note = "",
+       #custom.header = list("Literacy" = 1:3, "Numeracy" = 4:6),
+       custom.model.names = c("Police", "2", "3"),
+       caption.above = TRUE, 
+       #dcolumn = TRUE,
+       booktabs = TRUE,
+       use.packages = FALSE,
+       custom.gof.rows = list(
+         "District FE" = c("Yes", "Yes", "Yes"),
+         "Controls" = c("No", "Yes", "Yes")
+       ),
+       custom.coef.map = list("treatment:teacher" = "Teacher x Post",
+                              "teacher" = "Teacher", 
+                              "treatment" = "Post", 
+                              "age" = "Age", 
+                              "educSecondary" = "Secondary education",
+                              "educTertiary" = "Tertiary education"
+       ),
+       table = FALSE,
+       digits = 3,
+       ci.force = FALSE,       
+       include.ci = FALSE,    
+       single.row = FALSE,    
+       stars = c(0.01, 0.05, 0.1),
+       include.adjr = FALSE, 
+       include.rsquared = FALSE, 
+       include.rmse = FALSE,
+       include.nclusters = FALSE
+) 
+
+
+
+############################################### graph showing evidene of rent seeking
+plot <- tz %>% 
+  filter(!is.na(paid_bribe_sch_yr)) %>%
+  count(paid_bribe_sch_yr) %>%
+  mutate(percentage = round(n/sum(n) * 100,0),
+         label = ifelse(paid_bribe_sch_yr == 0, "No", "Yes")) %>%
+  ggplot(aes(x = label, y = percentage)) +
+  geom_col(fill = c("grey90", "grey50"), color = "black", width = 0.6) +
+  geom_text(aes(label = paste0(round(percentage, 1), "%")), 
+            vjust = -0.5, size = 4, fontface = "bold") +
+  labs(title = "Distribution of School Year Bribe Payments",
+       x = "Paid Bribe",
+       y = "Percent (%)") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5, size = 14))
+
+ggsave(filename = "03_graphs/paid_bribe_sch_yr.png", 
+       plot = plot, 
+       width = 6, 
+       height = 10, 
+       dpi = 300)
+
+
 
 
 
