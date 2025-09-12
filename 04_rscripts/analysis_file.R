@@ -78,7 +78,7 @@ tzr1 <- tzr1 %>%
     district = str_to_title(district),
     educ = ifelse(educ_r1 <=3, "Primary", ifelse(educ_r1 >=4 & educ_r1 <=5, "Secondary", ifelse(educ_r1 == 10, NA, "Tertiary")))
   ) %>% 
-  select(teacher, treatment, free_sch, diff_sch_child_placement, diff_hh_elec_connect, district, age, withinwt, educ, teachers_corrupt, police_corrupt)
+  select(teacher, treatment, free_sch, diff_sch_child_placement, diff_hh_elec_connect, district, age, withinwt, educ, teachers_corrupt, police_corrupt, judge_corrupt, mp_corrupt)
 
 
 
@@ -127,7 +127,7 @@ tzr3 <- tzr3 %>%
     district = str_to_title(district),
     educ = ifelse(educ_r3 <=3, "Primary", ifelse(educ_r3 >=4 & educ_r3 <=5, "Secondary", ifelse(educ_r3 == 99, NA, "Tertiary")))
   ) %>% 
-  select(teacher, treatment, free_sch, diff_sch_child_placement, diff_hh_elec_connect, district, age, withinwt, educ, teachers_corrupt, police_corrupt, paid_bribe_sch_yr)
+  select(teacher, treatment, free_sch, diff_sch_child_placement, diff_hh_elec_connect, district, age, withinwt, educ, teachers_corrupt, police_corrupt, judge_corrupt, mp_corrupt, paid_bribe_sch_yr)
 
 ############################################################################################## ANALYSIS  ##################################################
 ### Append r1 and r3 dataset
@@ -191,7 +191,7 @@ texreg(list(did_fe, did_fe1, did_fe2),
 
 ################################################# Evidence of rent-seeking
 #reshape data
-tz_long <- tz %>%
+tz_long_police <- tz %>%
   select(educ, district, teachers_corrupt, police_corrupt, age, treatment, withinwt) %>% 
   pivot_longer(
     cols = c(teachers_corrupt, police_corrupt),
@@ -203,18 +203,42 @@ tz_long <- tz %>%
   ) %>%
   select(-profession)
 
+tz_long_judge <- tz %>%
+  select(educ, district, teachers_corrupt, judge_corrupt, age, treatment, withinwt) %>% 
+  pivot_longer(
+    cols = c(teachers_corrupt, judge_corrupt),
+    names_to = "profession",
+    values_to = "corrupt"
+  ) %>%
+  mutate(
+    teacher = if_else(profession == "teachers_corrupt", 1, 0)
+  ) %>%
+  select(-profession)
+
+tz_long_mp <- tz %>%
+  select(educ, district, teachers_corrupt, mp_corrupt, age, treatment, withinwt) %>% 
+  pivot_longer(
+    cols = c(teachers_corrupt, mp_corrupt),
+    names_to = "profession",
+    values_to = "corrupt"
+  ) %>%
+  mutate(
+    teacher = if_else(profession == "teachers_corrupt", 1, 0)
+  ) %>%
+  select(-profession)
+
 ## Evidence of rent-seeking
-did_rentseeking <- feols(corrupt ~ teacher * treatment + educ + age, 
-                         data = tz_long,
+did_rentseeking <- feols(corrupt ~ teacher * treatment + educ + age | district, 
+                         data = tz_long_police,
                          weights = ~ withinwt)
   
-did_rentseeking1 <- feols(corrupt ~ teacher * treatment + educ + age, 
-                         data = tz_long,
+did_rentseeking1 <- feols(corrupt ~ teacher * treatment + educ + age | district, 
+                         data = tz_long_judge,
                          weights = ~ withinwt,
                          cluster = ~district)
 
 did_rentseeking2 <- feols(corrupt ~ teacher * treatment + educ + age | district, 
-                         data = tz_long,
+                         data = tz_long_mp,
                          weights = ~ withinwt,
                          cluster = ~district)
 
@@ -223,16 +247,16 @@ texreg(list(did_rentseeking, did_rentseeking1, did_rentseeking2),
        file = "02_tables/did_rent_main.tex", 
        custom.note = "",
        #custom.header = list("Literacy" = 1:3, "Numeracy" = 4:6),
-       custom.model.names = c("Police", "2", "3"),
+       custom.model.names = c("Police", "Judge", "Elected leader"),
        caption.above = TRUE, 
        #dcolumn = TRUE,
        booktabs = TRUE,
        use.packages = FALSE,
        custom.gof.rows = list(
          "District FE" = c("Yes", "Yes", "Yes"),
-         "Controls" = c("No", "Yes", "Yes")
+         "Controls" = c("Yes", "Yes", "Yes")
        ),
-       custom.coef.map = list("treatment:teacher" = "Teacher x Post",
+       custom.coef.map = list("teacher:treatment" = "Teacher x Post",
                               "teacher" = "Teacher", 
                               "treatment" = "Post", 
                               "age" = "Age", 
@@ -263,7 +287,7 @@ plot <- tz %>%
   geom_col(fill = c("grey90", "grey50"), color = "black", width = 0.6) +
   geom_text(aes(label = paste0(round(percentage, 1), "%")), 
             vjust = -0.5, size = 4, fontface = "bold") +
-  labs(title = "Distribution of School Year Bribe Payments",
+  labs(title = "",
        x = "Paid Bribe",
        y = "Percent (%)") +
   theme_minimal() +
@@ -271,7 +295,7 @@ plot <- tz %>%
 
 ggsave(filename = "03_graphs/paid_bribe_sch_yr.png", 
        plot = plot, 
-       width = 6, 
+       width = 10, 
        height = 10, 
        dpi = 300)
 
